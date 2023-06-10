@@ -4,13 +4,21 @@
     background-position: top;
     background-repeat: no-repeat;
     backdrop-filter: blur(5px);
+    margin-top: 2rem;
 }
 
 .about-title {
     font-size: 3.5rem;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
     margin-top: 5rem;
+    letter-spacing: 2px;
+    transition: all .3s ease-in-out;
+}
+
+.about-title:hover,
+.we-partners:hover {
+    letter-spacing: 5px;
 }
 
 .about-title::after {
@@ -24,8 +32,65 @@
     z-index: -1;
     color: #424242c9;
     text-shadow: 0 5px 5px #424242c9;
+    transition: all .3s ease-in-out;
 }
 
+.we-partners::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background: #576880c9;
+    margin-top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.we-partners {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5rem;
+    letter-spacing: 2px;
+    transition: all .3s ease-in-out;
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .bg-about {
+        margin: 1rem 1rem 1rem 1.1rem;
+    }
+
+    .about-title {
+        font-size: 2.7rem;
+        letter-spacing: 1px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 4rem;
+    }
+
+    .about-title::after {
+        content: "Hakkımızda";
+        display: block;
+        margin: -1rem auto 0;
+        opacity: 0.4;
+        letter-spacing: 8px;
+        font-size: 2.5rem;
+        position: relative;
+        z-index: -1;
+        color: #424242c9;
+        text-shadow: 0 5px 5px #424242c9;
+    }
+}
+
+
+
+/* ref card slider */
 @-webkit-keyframes scroll {
     0% {
         transform: translateX(0);
