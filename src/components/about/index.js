@@ -16,9 +16,9 @@ export default function index() {
                         Hakkımızda
                     </h1>
                 </Fade>
-                <div className='about-text text-justify flex flex-wrap flex-row justify-evenly content-center gap-4'>
+                <div className='about-text text-justify flex flex-col flex-wrap  justify-evenly content-center gap-4'>
                     <Fade left>
-                        <div className='w-2/5'>
+                        <div className='md:w-2/5'>
                             <p>
                                 <a
                                     href='https://www.cigdemsogutma.com/'
@@ -51,7 +51,7 @@ export default function index() {
                         </div>
                     </Fade>
                     <Fade right>
-                        <div className='w-2/5'>
+                        <div className='md:w-2/5'>
                             <p>
                                 <span className='hover:scale-105 transition-all duration-200 font-medium hover:font-bold'>
                                     INTERCOOL

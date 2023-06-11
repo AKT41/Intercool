@@ -4,22 +4,22 @@
 }
 
 .nav-item:hover {
-    background-color: #fff;
+    /* background-color: #fff; */
     color: #fff;
     border-radius: 5px;
     transition: 0.3s;
     --tw-bg-opacity: 0.2;
-    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-    backdrop-filter: blur(10px);
+    background-color: rgba(14, 195, 233, var(--tw-bg-opacity));
 }
 
 .products {
     padding: 0 1rem;
 }
+
 @media screen and (max-width: 768px) {
     .nav-item {
         padding: 0.5rem 0.5rem;
-        margin: .5rem 0.25rem;
+        margin: 0.5rem 0.25rem;
         background-color: rgba(255, 255, 255, 0.094);
     }
 
@@ -30,4 +30,4 @@
     .search-box input {
         width: 100%;
     }
-}   
+}
