@@ -4,12 +4,10 @@
 }
 
 .nav-item:hover {
-    /* background-color: #fff; */
     color: #fff;
     border-radius: 5px;
     transition: 0.3s;
-    --tw-bg-opacity: 0.2;
-    background-color: rgba(14, 195, 233, var(--tw-bg-opacity));
+    background-color: rgba(109, 185, 201, 0.904);
 }
 
 .products {

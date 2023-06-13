@@ -50,7 +50,7 @@ export default function Navbar() {
                         <button
                             data-collapse-toggle='mobile-menu-language-select'
                             type='button'
-                            className='inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-40 dark:focus:ring-gray-600'
+                            className='inline-flex items-center p-2 ml-1 text-sm text-gray-100 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-40 dark:focus:ring-gray-200'
                             aria-controls='mobile-menu-language-select'
                             aria-expanded='false'
                             onClick={toggleMenu}
@@ -229,14 +229,14 @@ export default function Navbar() {
                             <input
                                 type='text'
                                 id='search-navbar'
-                                className='block w-full transition-all duration-200 p-2 pl-10 hover:border-sky-950 border-solid focus:bg-gray-300 text-gray-900 border border-gray-300 rounded-lg bg-gray-200 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-500 outline-none'
+                                className='block w-full transition-all duration-200 p-2 pl-10 hover:border-sky-950 border-solid focus:bg-gray-200 text-gray-900 border border-gray-300 rounded-lg bg-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-500 outline-none'
                                 placeholder='Ara...'
                                 onChange={handleInputChange}
                                 value={inputValue}
                             />
 
                             <div
-                                className='absolute inset-y-0 right-0 cursor-pointer flex items-center pr-3  z'
+                                className='absolute inset-y-0 right-0 cursor-pointer flex items-center pr-3 '
                                 onClick={clearInput}
                             >
                                 <svg

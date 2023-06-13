@@ -3,18 +3,20 @@
 import React from 'react'
 import NavProduct from '../nav-footer/navigation-product'
 import { Zoom, Fade } from 'react-reveal'
+import Table from './table'
+import Recommended from './recommended'
 
 export default function ProductDetails() {
     return (
         <>
-            <div className='max-w-7xl px-5 py-24 mx-auto mt-5 min-h-screen overflow-x-hidden'>
+            <div className='max-w-7xl px-5 py-24 mx-auto mt-5 min-h-screen overflow-x-hidden overflow-y-hidden'>
                 <NavProduct />
-                <div className=' w-full mx-auto flex flex-wrap  '>
+                <div className=' w-full mx-auto flex flex-wrap '>
                     <Zoom clear>
                         <img
                             src='https://www.cigdemsogutma.com/img/products/beyaz-iszalasyonlu_17.07.2021_8311014_04.03.2023_0913b3e.png'
                             alt='bakır boru'
-                            className='lg:w-1/3 my-auto  w-full max-h-72 object-cover object-center rounded cursor-zoom-in'
+                            className='lg:w-1/3 my-auto  w-full  object-cover object-center rounded select-none'
                             // maybe w-1/2
                         />
                     </Zoom>
@@ -27,7 +29,7 @@ export default function ProductDetails() {
                         </Fade>
                         <Fade bottom>
                             <h1 className='text-gray-900 text-2xl title-font font-medium mb-2'>
-                                1/4-3/8 SPLİT-0,70MM BEYAZ İZOLASYONLU BAKIR BORU
+                                BEYAZ İZOLASYONLU BAKIR BORU
                             </h1>
                             <p className='text-xs text-gray-400'>
                                 <span className='text-gray-500'>Ürün Kodu: </span> Çiğdem - 2067
@@ -47,37 +49,77 @@ export default function ProductDetails() {
                                 sistemleri, su tesisatı, ısıtma sistemleri gibi birçok farklı alanda
                                 kullanılmaktadır. Yüksek kaliteli malzemesi ve beyaz izolasyon
                                 kaplaması sayesinde uzun ömürlüdür ve uzun süre dayanıklı kalabilir.
+                                <div className='specifications'>
+                                    <h1 className='text-gray-900 text-sm title-font font-medium '>
+                                        <a
+                                            href='#specifications'
+                                            className='group flex items-center content-center gap-2'
+                                        >
+                                            Teknik Özellikler
+                                            <span>
+                                                <svg
+                                                    xmlns='http://www.w3.org/2000/svg'
+                                                    class='icon icon-tabler icon-tabler-arrow-down animate-bounce'
+                                                    width='20'
+                                                    height='20'
+                                                    viewBox='0 0 24 24'
+                                                    stroke-width='1'
+                                                    stroke='currentColor'
+                                                    fill='none'
+                                                    stroke-linecap='round'
+                                                    stroke-linejoin='round'
+                                                >
+                                                    <path
+                                                        stroke='none'
+                                                        d='M0 0h24v24H0z'
+                                                        fill='none'
+                                                    ></path>
+                                                    <path d='M12 5l0 14'></path>
+                                                    <path d='M18 13l-6 6'></path>
+                                                    <path d='M6 13l6 6'></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </h1>
+                                </div>
                             </p>
                         </Fade>
-                        <div className='flex md:justify-center items-center content-center mt-5 justify-between gap-5'>
-                            <Fade left>
-                                <span className='text-lg'>96.00₺</span>
-                            </Fade>
-                            <Fade right>
-                                <button className='flex md:ml-auto justify-center items-center content-center gap-2 text-white bg-green-700 border-0 py-2 px-3 focus:outline-none hover:bg-green-800 rounded transition-all duration-300'>
-                                    <span className='text-lg'> WhatsApp ile Sipariş Ver</span>
-                                    <svg
-                                        xmlns='http://www.w3.org/2000/svg'
-                                        className='icon icon-tabler icon-tabler-brand-whatsapp'
-                                        width='24'
-                                        height='24'
-                                        viewBox='0 0 24 24'
-                                        strokeWidth='1.25'
-                                        stroke='currentColor'
-                                        fill='none'
-                                        strokeLinecap='round'
-                                        strokeLinejoin='round'
-                                    >
-                                        <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-                                        <path d='M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9'></path>
-                                        <path d='M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1'></path>
-                                    </svg>
-                                </button>
-                            </Fade>
+                        <div className='flex md:justify-between items-center content-center mt-5 justify-between gap-5'>
+                            <div className='flex gap-3 items-center'>
+                                <Fade left>
+                                    <span className='text-lg'>96.00₺</span>
+                                </Fade>
+                                <Fade right>
+                                    <button className='flex justify-center items-center content-center gap-2 text-white bg-green-700 border-0 py-2 px-3 focus:outline-none hover:bg-green-800 rounded ml-3 transition-all duration-300'>
+                                        <span className='text-lg'> WhatsApp ile Sipariş Ver</span>
+                                        <svg
+                                            xmlns='http://www.w3.org/2000/svg'
+                                            className='icon icon-tabler icon-tabler-brand-whatsapp'
+                                            width='24'
+                                            height='24'
+                                            viewBox='0 0 24 24'
+                                            strokeWidth='1.25'
+                                            stroke='currentColor'
+                                            fill='none'
+                                            strokeLinecap='round'
+                                            strokeLinejoin='round'
+                                        >
+                                            <path
+                                                stroke='none'
+                                                d='M0 0h24v24H0z'
+                                                fill='none'
+                                            ></path>
+                                            <path d='M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9'></path>
+                                            <path d='M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1'></path>
+                                        </svg>
+                                    </button>
+                                </Fade>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {/* details table */}
+                <Recommended />
+                <Table />
             </div>
         </>
     )
