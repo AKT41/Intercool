@@ -22,47 +22,70 @@ const categorySchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique: true,
+        unique: true
+    }
+})
+
+const Category = mongoose.models.Category || mongoose.model('Category', categorySchema)
+
+const productSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+        unique: true
     },
-    products: [
+    images: [
         {
-            name: {
-                type: String,
-                required: true,
-                unique: true,
-        
-            },
-            images: [
-                {
-                    id: String,
-                    url: String,
-        
-                }
-            ],
-            explanation: {
-                type: String,
-                required: true,
-            },
-            productCode: {
-                type: String,
-                required: true,
-                unique: true,
-            },
-            properties: [
-                {
-                    name: String,
-                }
-            ],
-            variants: [
-                {
-                    type: Array,
-                    required: true,
-                    
-                }
-            ]
-                
+            id: String,
+            url: String
+        }
+    ],
+    explanation: {
+        type: String,
+        required: true
+    },
+    productCode: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    properties: [
+        {
+            name: String
+        }
+    ],
+    variants: [
+        {
+            type: Array,
+            required: true
+        }
+    ],
+    comments: [
+        {
+            owner: String,
+            comment: String,
+            date: Date,
+            applied: Boolean
         }
     ]
 })
 
-export default User
+const Product = mongoose.models.Product || mongoose.model('Product', productSchema)
+
+const referanceSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    images: [
+        {
+            id: String,
+            url: String
+        }
+    ]
+})
+
+const Referance = mongoose.models.Referance || mongoose.model('Referance', referanceSchema)
+
+export { User, Category, Product, Referance }
