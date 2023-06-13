@@ -54,6 +54,12 @@ const categorySchema = new mongoose.Schema({
                 }
             ],
             variants: [
+                {
+                    type: Array,
+                    required: true,
+                    
+                }
+            ]
                 
         }
     ]
