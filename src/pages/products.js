@@ -22,7 +22,7 @@ export default function about() {
                 <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
                 <meta name='revisit-after' content='1 days' />
                 <meta name='google' content='notranslate' />
-                <link rel='icon' href='/favicon.ico' />
+                <link rel='icon' href='https://i.hizliresim.com/e4o20gp.png' />
                 <title>Ürünlerimiz | İntercool</title>
                 <script src='https://cdn.tailwindcss.com'></script>
             </Helmet>

@@ -59,15 +59,15 @@ export default function Footer() {
                             </div>
                         </nav>
                     </Fade>
-                    <div class='flex justify-center mt-8 space-x-6'>
+                    <div className='flex justify-center mt-8 space-x-6'>
                         <Fade left>
                             <a
                                 href='#'
-                                class='text-gray-200 hover:bg-slate-400 hover:text-[#4267B2] transition-all duration-300 p-3 rounded-full'
+                                className='text-gray-200 hover:bg-slate-400 hover:text-[#4267B2] transition-all duration-300 p-3 rounded-full'
                             >
-                                <span class='sr-only'>Facebook</span>
+                                <span className='sr-only'>Facebook</span>
                                 <svg
-                                    class='w-6 h-6'
+                                    className='w-6 h-6'
                                     aria-hidden='true'
                                     fill='currentColor'
                                     viewBox='0 0 24 24'
@@ -84,11 +84,11 @@ export default function Footer() {
                         <Fade left>
                             <a
                                 href='#'
-                                class='text-gray-200 hover:bg-slate-400  hover:text-[#E1306C] transition-all duration-300 p-3 rounded-full'
+                                className='text-gray-200 hover:bg-slate-400  hover:text-[#E1306C] transition-all duration-300 p-3 rounded-full'
                             >
-                                <span class='sr-only'>Instagram</span>
+                                <span className='sr-only'>Instagram</span>
                                 <svg
-                                    class='w-6 h-6'
+                                    className='w-6 h-6'
                                     aria-hidden='true'
                                     fill='currentColor'
                                     viewBox='0 0 24 24'
@@ -104,11 +104,11 @@ export default function Footer() {
                         <Fade right>
                             <a
                                 href='#'
-                                class='text-gray-200 hover:bg-slate-400 hover:text-[#1DA1F2] transition-all duration-300 p-3 rounded-full'
+                                className='text-gray-200 hover:bg-slate-400 hover:text-[#1DA1F2] transition-all duration-300 p-3 rounded-full'
                             >
-                                <span class='sr-only'>Twitter</span>
+                                <span className='sr-only'>Twitter</span>
                                 <svg
-                                    class='w-6 h-6'
+                                    className='w-6 h-6'
                                     aria-hidden='true'
                                     fill='currentColor'
                                     viewBox='0 0 24 24'
@@ -119,7 +119,7 @@ export default function Footer() {
                         </Fade>
                     </div>
                     <Fade bottom>
-                        <p class='mt-8 text-base leading-6 text-center text-gray-200'>
+                        <p className='mt-8 text-base leading-6 text-center text-gray-200'>
                             © 2023 İntercool. Tüm hakları saklıdır.
                         </p>
                     </Fade>

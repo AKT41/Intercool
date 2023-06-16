@@ -30,20 +30,24 @@ export default function ProductList() {
 
     return (
         <>
-            <div class='app-container mt-20 w-full max-w-7xl'>
-                <div class='app-content'>
-                    <div class='app-content-header'>
-                        <h1 class='app-content-headerText'>Ürünlerimiz</h1>
+            <div className='app-container mt-20 w-full max-w-7xl'>
+                <div className='app-content'>
+                    <div className='app-content-header'>
+                        <h1 className='app-content-headerText'>Ürünlerimiz</h1>
                     </div>
-                    <div class='app-content-actions'>
-                        <input class='search-bar' placeholder='Ürün Ara...' type='text' />
-                        <div class='app-content-actions-wrapper'>
-                            <div class='filter-button-wrapper'>
+                    <div className='app-content-actions'>
+                        <input
+                            className='search-bar border border-solid'
+                            placeholder='Ürün Ara...'
+                            type='text'
+                        />
+                        <div className='app-content-actions-wrapper'>
+                            <div className='filter-button-wrapper'>
                                 <button
-                                    class='action-button filter jsFilter'
+                                    className='action-button filter jsFilter'
                                     onClick={handleFilterClick}
                                 >
-                                    <span>Filter</span>
+                                    <span>Filtrele</span>
                                     <svg
                                         xmlns='http://www.w3.org/2000/svg'
                                         width='16'
@@ -51,36 +55,39 @@ export default function ProductList() {
                                         viewBox='0 0 24 24'
                                         fill='none'
                                         stroke='currentColor'
-                                        stroke-width='2'
-                                        stroke-linecap='round'
-                                        stroke-linejoin='round'
-                                        class='feather feather-filter'
+                                        strokeWidth='2'
+                                        strokeLinecap='round'
+                                        strokeLinejoin='round'
+                                        className='feather feather-filter'
                                     >
                                         <polygon points='22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3' />
                                     </svg>
                                 </button>
-                                <div class={`filter-menu ${isFilterMenuActive ? 'active' : ''}`}>
-                                    <label>Category</label>
+                                <div
+                                    className={`filter-menu ${isFilterMenuActive ? 'active' : ''}`}
+                                >
+                                    <label>Kategori</label>
                                     <select>
-                                        <option>All Categories</option>
-                                        <option>Furniture</option> <option>Decoration</option>
-                                        <option>Kitchen</option>
-                                        <option>Bathroom</option>
+                                        <option>Bütün Kategoriler</option>
+                                        <option>Klima</option>
+                                        <option>Medikal</option>
+                                        <option>Sıhhi Tesisat</option>
+                                        <option>Endüstriyel</option>
                                     </select>
-                                    <label>Status</label>
+                                    <label>Stok Durumu</label>
                                     <select>
-                                        <option>All Status</option>
-                                        <option>Active</option>
-                                        <option>Disabled</option>
+                                        <option>Hepsi</option>
+                                        <option>Mevcut</option>
+                                        <option>Stokda Yok</option>
                                     </select>
-                                    <div class='filter-menu-buttons'>
-                                        <button class='filter-button reset'>Reset</button>
-                                        <button class='filter-button apply'>Apply</button>
+                                    <div className='filter-menu-buttons'>
+                                        <button className='filter-button reset'>Sıfırla</button>
+                                        <button className='filter-button apply'>Uygula</button>
                                     </div>
                                 </div>
                             </div>
                             <button
-                                class={`action-button list ${!isGridActive ? 'active' : ''}`}
+                                className={`action-button list ${!isGridActive ? 'active' : ''}`}
                                 title='List View'
                                 onClick={handleListClick}
                             >
@@ -91,10 +98,10 @@ export default function ProductList() {
                                     viewBox='0 0 24 24'
                                     fill='none'
                                     stroke='currentColor'
-                                    stroke-width='2'
-                                    stroke-linecap='round'
-                                    stroke-linejoin='round'
-                                    class='feather feather-list'
+                                    strokeWidth='2'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
+                                    className='feather feather-list'
                                 >
                                     <line x1='8' y1='6' x2='21' y2='6' />
                                     <line x1='8' y1='12' x2='21' y2='12' />
@@ -105,21 +112,21 @@ export default function ProductList() {
                                 </svg>
                             </button>
                             <button
-                                class={`action-button grid ${isGridActive ? 'active' : ''}`}
+                                className={`action-button grid ${isGridActive ? 'active' : ''}`}
                                 title='Grid View'
                                 onClick={handleGridClick}
                             >
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
+                                    className='feather feather-grid mb-3'
                                     width='16'
                                     height='16'
                                     viewBox='0 0 24 24'
                                     fill='none'
                                     stroke='currentColor'
-                                    stroke-width='2'
-                                    stroke-linecap='round'
-                                    stroke-linejoin='round'
-                                    class='feather feather-grid'
+                                    strokeWidth='2'
+                                    strokeLinecap='round'
+                                    strokeLinejoin='round'
                                 >
                                     <rect x='3' y='3' width='7' height='7' />
                                     <rect x='14' y='3' width='7' height='7' />
@@ -129,11 +136,15 @@ export default function ProductList() {
                             </button>
                         </div>
                     </div>
-                    <div class={`products-area-wrapper ${isGridActive ? 'gridView' : 'tableView'}`}>
-                        <div class='products-header'>
-                            <div class='product-cell image'>
+                    <div
+                        className={`products-area-wrapper ${
+                            isGridActive ? 'gridView' : 'tableView'
+                        }`}
+                    >
+                        <div className='products-header'>
+                            <div className='product-cell image'>
                                 Ürünler
-                                <button class='sort-button'>
+                                <button className='sort-button'>
                                     <svg
                                         xmlns='http://www.w3.org/2000/svg'
                                         width='16'
@@ -147,9 +158,9 @@ export default function ProductList() {
                                     </svg>
                                 </button>
                             </div>
-                            <div class='product-cell category'>
+                            <div className='product-cell category'>
                                 Kategori
-                                <button class='sort-button'>
+                                <button className='sort-button'>
                                     <svg
                                         xmlns='http://www.w3.org/2000/svg'
                                         width='16'
@@ -163,9 +174,9 @@ export default function ProductList() {
                                     </svg>
                                 </button>
                             </div>
-                            <div class='product-cell status-cell'>
+                            <div className='product-cell status-cell'>
                                 Stok
-                                <button class='sort-button'>
+                                <button className='sort-button'>
                                     <svg
                                         xmlns='http://www.w3.org/2000/svg'
                                         width='16'
@@ -179,9 +190,9 @@ export default function ProductList() {
                                     </svg>
                                 </button>
                             </div>
-                            <div class='product-cell sales'>
+                            <div className='product-cell sales'>
                                 Yorumlar
-                                <button class='sort-button'>
+                                <button className='sort-button'>
                                     <svg
                                         xmlns='http://www.w3.org/2000/svg'
                                         width='16'
@@ -195,9 +206,9 @@ export default function ProductList() {
                                     </svg>
                                 </button>
                             </div>
-                            <div class='product-cell price'>
+                            <div className='product-cell price'>
                                 Fiyat
-                                <button class='sort-button'>
+                                <button className='sort-button'>
                                     <svg
                                         xmlns='http://www.w3.org/2000/svg'
                                         width='16'
@@ -213,395 +224,373 @@ export default function ProductList() {
                             </div>
                         </div>
                         <Fade left cascade>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row group'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
+                                        className='group-hover:scale-105 transition-all duration-500 ease-in-out'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Yorumlar:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status disabled'>Stokta Yok</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
+                            <div className='products-row'>
+                                <button className='cell-more-button'>Ürünü İncele</button>
+                                <div className='product-cell image'>
                                     <img
                                         src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
                                         alt='product'
                                     />
                                     <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
-                                </div>
-                            </div>
-                            <div class='products-row'>
-                                <button class='cell-more-button'>Ürünü İncele</button>
-                                <div class='product-cell image'>
-                                    <img
-                                        src='https://www.ottocool.com/uploads/product/ottocool_ciftli_izolasyonlu_platina_gri_bakir_boru.jpg'
-                                        alt='product'
-                                    />
-                                    <span>Çiftli İzolasyonlu Platina Gri Bakır Boru</span>
-                                </div>
-                                <div class='product-cell category'>
-                                    <span class='cell-label'>Kategori:</span>Klima
-                                </div>
-                                <div class='product-cell status-cell'>
-                                    <span class='cell-label'>Stok:</span>
-                                    <span class='status active'>Mevcut</span>
-                                </div>
-                                <div class='product-cell sales'>
-                                    <span class='cell-label'>Sales:</span>11
-                                </div>
-                                <div class='product-cell price'>
-                                    <span class='cell-label'>Fiyat:</span>₺1500
+                                    <div className='product-cell category'>
+                                        <span className='cell-label'>Kategori:</span>Klima
+                                    </div>
+                                    <div className='product-cell status-cell'>
+                                        <span className='cell-label'>Stok:</span>
+                                        <span className='status active'>Mevcut</span>
+                                    </div>
+                                    <div className='product-cell sales'>
+                                        <span className='cell-label'>Sales:</span>11
+                                    </div>
+                                    <div className='product-cell price'>
+                                        <span className='cell-label'>Fiyat:</span>₺1500
+                                    </div>
                                 </div>
                             </div>
                         </Fade>
