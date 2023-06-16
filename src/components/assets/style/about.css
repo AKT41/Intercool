@@ -13,7 +13,8 @@
     text-align: center;
     margin-top: 5rem;
     letter-spacing: 2px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    
 }
 
 .about-title:hover,
@@ -22,9 +23,9 @@
 }
 
 .about-title::after {
-    content: "Hakkımızda";
+    content: 'Hakkımızda';
     display: block;
-    margin: -.7rem auto 0;
+    margin: -3.7rem auto 0;
     opacity: 0.4;
     letter-spacing: 8px;
     font-size: 4rem;
@@ -32,11 +33,11 @@
     z-index: -1;
     color: #424242c9;
     text-shadow: 0 5px 5px #424242c9;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .we-partners::after {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     width: 5rem;
@@ -51,15 +52,10 @@
     font-size: 2.5rem;
     font-weight: 600;
     text-align: center;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     letter-spacing: 2px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
-
-
-
-
-
 
 @media screen and (max-width: 768px) {
     .bg-about {
@@ -75,20 +71,18 @@
     }
 
     .about-title::after {
-        content: "Hakkımızda";
+        content: 'Hakkımızda';
         display: block;
-        margin: -1rem auto 0;
-        opacity: 0.4;
+        margin: -3rem auto 0;
+        opacity: 0.1;
         letter-spacing: 8px;
-        font-size: 2.5rem;
+        font-size: 3rem;
         position: relative;
         z-index: -1;
         color: #424242c9;
         text-shadow: 0 5px 5px #424242c9;
     }
 }
-
-
 
 /* ref card slider */
 @-webkit-keyframes scroll {
@@ -122,7 +116,7 @@
 
 .slider::before,
 .slider::after {
-    content: "";
+    content: '';
     height: 100%;
     position: absolute;
     width: 200px;
@@ -168,6 +162,7 @@
     margin: 0 0;
     width: 75%;
     height: 75%;
+    margin-right: -1rem;
 }
 
 .slider .slide-track:hover {

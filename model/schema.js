@@ -83,7 +83,11 @@ const referanceSchema = new mongoose.Schema({
             id: String,
             url: String
         }
-    ]
+    ],
+    reflink: {
+        type: String,
+        required: true
+    }
 })
 
 const Referance = mongoose.models.Referance || mongoose.model('Referance', referanceSchema)

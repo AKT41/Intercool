@@ -1,53 +1,61 @@
 'use client'
 import React from 'react'
 import Fade from 'react-reveal/Fade'
+import Link from 'next/link'
 
 export default function Footer() {
     return (
         <>
-            <section class='bg-sky-700  bottom-0 left-0 right-0'>
-                <div class='max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8'>
+            <section className='bg-sky-700  bottom-0 left-0 right-0'>
+                <h1
+                    className='
+                    text-2xl font-bold tracking-wide text-center pt-6 text-gray-100 sm:text-3xl md:text-4xl
+                '
+                >
+                    <Link href='/'>İntercool</Link>
+                </h1>
+                <div className='max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8'>
                     <Fade bottom>
-                        <nav class='flex flex-wrap justify-center -mx-5 -my-2'>
-                            <div class='px-5 py-2'>
-                                <a
-                                    href='#'
-                                    class='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
+                        <nav className='flex flex-wrap justify-center -mx-5 -my-2'>
+                            <div className='px-5 py-2'>
+                                <Link
+                                    href='/'
+                                    className='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
                                 >
                                     Ana Sayfa
-                                </a>
+                                </Link>
                             </div>
-                            <div class='px-5 py-2'>
-                                <a
-                                    href='#'
-                                    class='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
+                            <div className='px-5 py-2'>
+                                <Link
+                                    href='/about'
+                                    className='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
                                 >
                                     Hakkımızda
-                                </a>
+                                </Link>
                             </div>
-                            <div class='px-5 py-2'>
-                                <a
-                                    href='#'
-                                    class='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
+                            <div className='px-5 py-2'>
+                                <Link
+                                    href='/references'
+                                    className='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
                                 >
                                     Referanslarımız
-                                </a>
+                                </Link>
                             </div>
-                            <div class='px-5 py-2'>
-                                <a
-                                    href='#'
-                                    class='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
+                            <div className='px-5 py-2'>
+                                <Link
+                                    href='/products'
+                                    className='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
                                 >
                                     Ürünlerimiz
-                                </a>
+                                </Link>
                             </div>
-                            <div class='px-5 py-2'>
-                                <a
-                                    href='#'
-                                    class='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
+                            <div className='px-5 py-2'>
+                                <Link
+                                    href='/contact'
+                                    className='text-base leading-6 text-gray-100 hover:text-gray-100 hover:bg-sky-500 px-3 py-2 rounded-md transition-all duration-300'
                                 >
                                     İletişim
-                                </a>
+                                </Link>
                             </div>
                         </nav>
                     </Fade>
@@ -112,7 +120,7 @@ export default function Footer() {
                     </div>
                     <Fade bottom>
                         <p class='mt-8 text-base leading-6 text-center text-gray-200'>
-                            © 2023 Çiğdem Soğutma. Tüm hakları saklıdır.
+                            © 2023 İntercool. Tüm hakları saklıdır.
                         </p>
                     </Fade>
                 </div>

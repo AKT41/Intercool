@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import '../assets/style/about.css'
+import { Fade } from 'react-reveal'
 
 function RefSlider() {
     return (

@@ -37,7 +37,7 @@ export default function ProductDetails() {
                         </Fade>
 
                         <Fade right>
-                            <p className='leading-relaxed border-b border-gray-500 border-opacity-20 border-solid pb-3 mb-3'>
+                            <p className='leading-relaxed border-b border-gray-500 border-opacity-20 border-solid pb-3 mb-3 '>
                                 1/4-3/8 0,70mm beyaz izolasyonlu bakır boru, birçok farklı uygulama
                                 alanında kullanılan yüksek kaliteli bir malzemedir. Bu boru,
                                 özellikle sıvı ve gaz akışı gerektiren sistemlerde güvenli ve etkili
@@ -45,44 +45,41 @@ export default function ProductDetails() {
                                 malzemesinden üretilmiştir ve dış yüzeyi beyaz renkli izolasyon
                                 malzemesi ile kaplanmıştır. Bu sayede, borunun dış yüzeyi mekanik
                                 hasarlara karşı korunurken aynı zamanda yalıtım özelliği de
-                                sağlanmaktadır. Bu boru, özellikle soğutma ve iklimlendirme
-                                sistemleri, su tesisatı, ısıtma sistemleri gibi birçok farklı alanda
-                                kullanılmaktadır. Yüksek kaliteli malzemesi ve beyaz izolasyon
-                                kaplaması sayesinde uzun ömürlüdür ve uzun süre dayanıklı kalabilir.
-                                <div className='specifications'>
-                                    <h1 className='text-gray-900 text-sm title-font font-medium '>
-                                        <a
-                                            href='#specifications'
-                                            className='group flex items-center content-center gap-2'
-                                        >
-                                            Teknik Özellikler
-                                            <span>
-                                                <svg
-                                                    xmlns='http://www.w3.org/2000/svg'
-                                                    class='icon icon-tabler icon-tabler-arrow-down animate-bounce'
-                                                    width='20'
-                                                    height='20'
-                                                    viewBox='0 0 24 24'
-                                                    stroke-width='1'
-                                                    stroke='currentColor'
-                                                    fill='none'
-                                                    stroke-linecap='round'
-                                                    stroke-linejoin='round'
-                                                >
-                                                    <path
-                                                        stroke='none'
-                                                        d='M0 0h24v24H0z'
-                                                        fill='none'
-                                                    ></path>
-                                                    <path d='M12 5l0 14'></path>
-                                                    <path d='M18 13l-6 6'></path>
-                                                    <path d='M6 13l6 6'></path>
-                                                </svg>
-                                            </span>
-                                        </a>
-                                    </h1>
-                                </div>
+                                sağlanmaktadır.
                             </p>
+                            <div className='specifications flex justify-end'>
+                                <h1 className='text-gray-900 text-sm title-font font-medium '>
+                                    <a
+                                        href='#specifications'
+                                        className='group flex items-center content-center gap-2'
+                                    >
+                                        Teknik Özellikler
+                                        <span>
+                                            <svg
+                                                xmlns='http://www.w3.org/2000/svg'
+                                                className='icon icon-tabler icon-tabler-arrow-down animate-bounce'
+                                                width='20'
+                                                height='20'
+                                                viewBox='0 0 24 24'
+                                                strokeWidth='1'
+                                                stroke='currentColor'
+                                                fill='none'
+                                                strokeLinecap='round'
+                                                strokeLinejoin='round'
+                                            >
+                                                <path
+                                                    stroke='none'
+                                                    d='M0 0h24v24H0z'
+                                                    fill='none'
+                                                ></path>
+                                                <path d='M12 5l0 14'></path>
+                                                <path d='M18 13l-6 6'></path>
+                                                <path d='M6 13l6 6'></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </h1>
+                            </div>
                         </Fade>
                         <div className='flex md:justify-between items-center content-center mt-5 justify-between gap-5'>
                             <div className='flex gap-3 items-center'>

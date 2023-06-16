@@ -8,18 +8,16 @@ import Fade from 'react-reveal/Fade'
 
 export default function index() {
     return (
-        <div className='w-full min-h-screen  mx-auto flex justify-between flex-col content-center items-center bg-slate-300 mt-5 overflow-hidden'>
+        <div className='w-full min-h-screen  mx-auto flex justify-between flex-col content-center items-center bg-slate-200 mt-5 overflow-hidden'>
             <div className='h-1'>{/*  */} </div>
             <div className='max-w-7xl h-full flex justify-between flex-col gap-5 bg-about'>
                 <Fade top>
-                    <h1 className='text-3xl font-bold text-center text-slate-600 about-title'>
-                        Hakkımızda
-                    </h1>
+                    <h1 className='font-bold text-center text-slate-600 about-title'>Hakkımızda</h1>
                 </Fade>
-                <div className='about-text text-justify flex flex-col flex-wrap  justify-evenly content-center gap-4'>
+                <div className='about-text text-justify flex flex-wrap flex-col  md:flex-row justify-evenly content-center gap-4'>
                     <Fade left>
-                        <div className='md:w-2/5'>
-                            <p>
+                        <div className='md:w-2/5 w-10/12'>
+                            <p className='border-b md:border-b-0 border-solid border-sky-900 pb-3'>
                                 <a
                                     href='https://www.cigdemsogutma.com/'
                                     className='text-sky-800'
@@ -37,7 +35,7 @@ export default function index() {
                                 konuda müşterilerimize destek olmayı hedefledik.
                             </p>
                             <br />
-                            <p>
+                            <p className='border-b md:border-b-0 border-solid border-sky-900 pb-3'>
                                 Sizlere daha profesyonel hizmet sunabilmek amacıyla,{' '}
                                 <span className='hover:scale-105 transition-all duration-200 font-medium hover:font-bold'>
                                     INTERCOOL{' '}
@@ -51,7 +49,7 @@ export default function index() {
                         </div>
                     </Fade>
                     <Fade right>
-                        <div className='md:w-2/5'>
+                        <div className='md:w-2/5 w-10/12'>
                             <p>
                                 <span className='hover:scale-105 transition-all duration-200 font-medium hover:font-bold'>
                                     INTERCOOL
@@ -67,7 +65,7 @@ export default function index() {
                                 dağıtmaktayız.
                             </p>
                             <img
-                                className='w-full h-2/5 bg-contain object-cover object-top mt-3'
+                                className='w-full hidden md:block h-2/5 bg-contain object-cover object-top mt-3'
                                 src='https://i.hizliresim.com/gygrtyn.jpg'
                                 alt='about'
                             />
@@ -77,10 +75,14 @@ export default function index() {
             </div>
 
             <div className='referance mb-5 flex flex-col justify-center text-center'>
-                <h1 className='text-4xl font-semibold mb-4 text-slate-600 hover:tracking-wider transition-all duration-300 we-partners'>
-                    İş Ortaklarımız
-                </h1>
-                <RefSlider />
+                <Fade top>
+                    <h1 className='text-4xl font-semibold mb-4 text-slate-600 hover:tracking-wider transition-all duration-300 we-partners'>
+                        İş Ortaklarımız
+                    </h1>
+                </Fade>
+                <Fade bottom>
+                    <RefSlider />
+                </Fade>
             </div>
         </div>
     )

@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-sync-scripts */
 'use client'
 import React from 'react'
-import About from '../components/about'
 import Navbar from '../components/nav-footer/navbar'
 import Footer from '../components/nav-footer/footer'
+import ReferanceHome from '../components/partners'
 import '../components/assets/style/navbar.css'
 import { Helmet } from 'react-helmet'
 import './style.css'
 
-export default function about() {
+export default function referances() {
     return (
         <>
             <Helmet>
@@ -21,14 +21,14 @@ export default function about() {
                 <meta name='language' content='Turkish' />
                 <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
                 <meta name='revisit-after' content='1 days' />
-                <meta name='google' content='notranslate' />
-                <link rel='icon' href='/favicon.ico' />
-                <title>Hakkımızda | İntercool</title>
+                <meta name='google' content='notranslate' /> 
+                <link rel='icon' href='https://i.hizliresim.com/e4o20gp.png' />
+                <title>Referanslarımız | İntercool</title>
                 <script src='https://cdn.tailwindcss.com'></script>
             </Helmet>
 
             <Navbar />
-            <About />
+            <ReferanceHome />
             <Footer />
         </>
     )
