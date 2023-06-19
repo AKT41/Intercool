@@ -5,7 +5,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html,
 body,
 div,
@@ -138,8 +137,7 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    --tw-bg-opacity: 1;
-    background-color: rgb(00 00 00 / var(--tw-bg-opacity));
+    background-color: #e2e8f0;
 }
 @media screen and (max-width: 768px) {
     .flicking-camera {

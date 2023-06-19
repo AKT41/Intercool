@@ -67,7 +67,11 @@ const productSchema = new mongoose.Schema({
             date: Date,
             applied: Boolean
         }
-    ]
+    ],
+    status: {
+        type: Boolean,
+        default: true
+    }
 })
 
 const Product = mongoose.models.Product || mongoose.model('Product', productSchema)

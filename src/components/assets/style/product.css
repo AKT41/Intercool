@@ -448,6 +448,9 @@ body {
     .tableView .product-cell.image {
         flex: 0.2;
     }
+    .tableView .products-row .cell-more-button {
+        display: block!important;
+    }
 }
 @media screen and (max-width: 520px) {
     .tableView .product-cell.category,
