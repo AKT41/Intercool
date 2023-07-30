@@ -1,18 +1,33 @@
-import React from "react";
-// import Navbar from "@/components/nav-footer/navbar";
-// import Footer from "@/components/nav-footer/footer";
-import ProductDetails from "@/components/product/product-details";
-import Top from "@/components/home/top";
+import React, { useEffect } from 'react'
+import Top from '@/components/home/top'
+import CategoryCard from '@/components/home/categoryCard'
+import BackToTop from '@/components/backtoTop'
+import Loader from '@/components/loader'
 
 export default function Home() {
-  return (
-    <>
-      {/* <Navbar /> */}
-      <div className="w-full h-full">
-        <Top />
-        <ProductDetails />
-      </div>
-      {/* <Footer /> */}
-    </>
-  );
+    const [loading, setLoading] = React.useState(true)
+
+    useEffect(() => {
+        setTimeout(() => setLoading(false), 2000)
+    }, [])
+
+    // useEffect (() => {
+    //     document.title = 'Anasayfa - E-Commerce'
+    // }, [])
+    // loading screen 2000ms
+    return (
+        <>
+            {loading ? (
+                <Loader />
+            ) : (
+                <>
+                    <div className='w-full h-full '>
+                        <Top />
+                        <CategoryCard />
+                        <BackToTop />
+                    </div>
+                </>
+            )}
+        </>
+    )
 }

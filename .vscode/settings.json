@@ -1,7 +1,7 @@
 {
     "liveshare.launcherClient": "visualStudioCode",
     "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
-    "workbench.sideBar.location": "right",
+    "workbench.sideBar.location": "left",
     "files.autoSave": "afterDelay",
     "editor.formatOnSave": true,
     "python.formatting.provider": "black",

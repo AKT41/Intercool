@@ -3,7 +3,9 @@
 import React from 'react'
 import Navbar from '../components/nav-footer/navbar'
 import Footer from '../components/nav-footer/footer'
+import ContactForm from '@/components/contact'
 import '../components/assets/style/navbar.css'
+import BackToTop from '@/components/backtoTop'
 import { Helmet } from 'react-helmet'
 import './style.css'
 
@@ -27,6 +29,8 @@ export default function about() {
             </Helmet>
 
             <Navbar />
+            <ContactForm />
+            <BackToTop />
             <Footer />
         </>
     )

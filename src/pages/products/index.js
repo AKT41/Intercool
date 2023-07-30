@@ -1,14 +1,21 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-sync-scripts */
 'use client'
-import React from 'react'
-import Navbar from '../components/nav-footer/navbar'
-import Footer from '../components/nav-footer/footer'
+import React, { useState, useEffect } from 'react'
+import Navbar from '../../components/nav-footer/navbar'
+import Footer from '../../components/nav-footer/footer'
 import ProductList from '@/components/product/product-list'
-import '../components/assets/style/navbar.css'
+import '../../components/assets/style/navbar.css'
+import BackToTop from '@/components/backtoTop'
+import Loader from '@/components/loader'
 import { Helmet } from 'react-helmet'
-import './style.css'
+import '../style.css'
 
 export default function about() {
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(() => {
+        setTimeout(() => setIsLoading(false), 2000)
+    }, [])
     return (
         <>
             <Helmet>
@@ -28,7 +35,14 @@ export default function about() {
             </Helmet>
 
             <Navbar />
-            <ProductList />
+            {isLoading ? (
+                <Loader />
+            ) : (
+                <>
+                    <ProductList />
+                    <BackToTop />
+                </>
+            )}
             <Footer />
         </>
     )

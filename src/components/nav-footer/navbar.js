@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 'use client'
-// import Image from "next/image";
 import React, { useState } from 'react'
 import '../assets/style/navbar.css'
 import Fade from 'react-reveal/Fade'
@@ -34,15 +33,17 @@ export default function Navbar() {
         <>
             <Fade top>
                 <nav
-                    className='bg-white border-gray-200 dark:bg-sky-700  fixed top-0 left-0 right-0 z-50 opac dark:bg-opacity-70 '
-                    style={{ backdropFilter: 'blur(10px)' }}
+                    className='bg-white border-gray-200 dark:bg-sky-700 fixed top-0 left-0 right-0 z-50 opac dark:bg-opacity-70'
+                    style={{
+                        backdropFilter: 'blur(10px)'
+                    }}
                 >
                     <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
                         <Link href='/' className='flex items-center'>
-                            {/* <img
-        src="https://cdn.discordapp.com/attachments/1113207949616218275/1116493113142288444/WhatsApp_Gorsel_2023-06-08_saat_16.56.05.jpg"
-        className="h-8 w-8 mr-3 rounded-full cover"
-        alt="Flowbite Logo"
+                            {/* <img 
+        src="https://cdn.discordapp.com/attachments/1113207949616218275/1116493113142288444/WhatsApp_Gorsel_2023-06-08_saat_16.56.05.jpg" 
+        className="h-8 w-8 mr-3 rounded-full cover" 
+        alt="Flowbite Logo" 
       /> */}
                             <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white select-none'>
                                 İntercool
@@ -52,7 +53,7 @@ export default function Navbar() {
                             <button
                                 data-collapse-toggle='mobile-menu-language-select'
                                 type='button'
-                                className='inline-flex items-center p-2 ml-1 text-sm text-gray-100 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-40 dark:focus:ring-gray-200'
+                                className='inline-flex items-center p-2 ml-1 text-sm text-gray-100 md:hidden focus:outline-none focus:ring-2 rounded-full focus:ring-gray-200 dark:text-gray-40 dark:focus:ring-gray-200'
                                 aria-controls='mobile-menu-language-select'
                                 aria-expanded='false'
                                 onClick={toggleMenu}
@@ -132,32 +133,11 @@ export default function Navbar() {
                                         href='/products'
                                         className='py-2 pl-3 pr-4 group peer flex md:justify-center items-center content-center gap-1 text-gray-900 rounded transition-all duration-200 nav-item bg-opacity-70  dark:text-white dark:hover:text-white dark:border-gray-700'
                                     >
-                                        {' '}
                                         Ürünlerimiz
-                                        <span>
-                                            <svg
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                className='icon icon-tabler icon-tabler-chevron-down group-hover:rotate-180 transition-all duration-500 group-focus:rotate-180'
-                                                width='24'
-                                                height='24'
-                                                viewBox='0 0 24 24'
-                                                strokeWidth='1.25'
-                                                stroke='currentColor'
-                                                fill='none'
-                                                strokeLinecap='round'
-                                                strokeLinejoin='round'
-                                            >
-                                                <path
-                                                    stroke='none'
-                                                    d='M0 0h24v24H0z'
-                                                    fill='none'
-                                                ></path>
-                                                <path d='M6 9l6 6l6 -6'></path>
-                                            </svg>
-                                        </span>
+                                        {/* <span>   */}
                                     </Link>
-                                    <ul
-                                        className='md:absolute w-[98%] relative md:w-64 hidden peer-hover:flex dark:bg-opacity-70 peer-focus:flex group-hover:flex flex-wrap hover:flex left-1 rounded-md bg-white border border-gray-200 dark:bg-gray-600 dark:border-gray-700'
+                                    {/* <ul
+                                        className='md:absolute w-[98%] relative md:w-64 hidden dark:bg-opacity-70 peer-focus:flex flex-wrap hover:flex left-1 rounded-md bg-white border border-gray-200 dark:bg-gray-600 dark:border-gray-700'
                                         style={{ backdropFilter: 'blur(10px)' }}
                                     >
                                         <li className='w-1/2'>
@@ -192,7 +172,7 @@ export default function Navbar() {
                                                 Kategori 4
                                             </Link>
                                         </li>
-                                    </ul>
+                                    </ul> */}
                                 </li>
                                 <li>
                                     <Link

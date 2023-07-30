@@ -314,7 +314,7 @@ body {
     border-radius: 4px;
     padding: 8px;
     width: 220px;
-    z-index: 2;
+    z-index: 999999;
     box-shadow: var(--filter-shadow);
     visibility: hidden;
     opacity: 0;
@@ -347,7 +347,7 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='black' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     padding: 8px 24px 8px 8px;
     background-position: right 4px center;
@@ -373,7 +373,7 @@ body {
     outline: none;
     color: var(--action-color);
     border-color: var(--action-color);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232869ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%232869ff' stroke='%232869ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
 }
 
 .filter-menu-buttons {
@@ -409,8 +409,6 @@ body {
     align-items: center;
     border-radius: 4px;
     background-color: var(--app-content-secondary-color);
-    position: sticky;
-    top: 0;
 }
 .tableView .products-row {
     display: flex;
@@ -431,6 +429,7 @@ body {
     font-size: 14px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .tableView .product-cell img {
     width: 32px;
@@ -449,7 +448,7 @@ body {
         flex: 0.2;
     }
     .tableView .products-row .cell-more-button {
-        display: block!important;
+        opacity: 1 !important;
     }
 }
 @media screen and (max-width: 520px) {
@@ -545,14 +544,14 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: transform 0.2s;
-    position: relative;
+    /* position: relative; */
 }
 .gridView .products-row:hover {
     transform: scale(1.01);
     box-shadow: var(--filter-shadow);
 }
 .gridView .products-row:hover .cell-more-button {
-    display: flex;
+    opacity: 1;
 }
 @media screen and (max-width: 1024px) {
     .gridView .products-row {
@@ -580,16 +579,17 @@ body {
     position: absolute;
     top: 16px;
     right: 16px;
-    z-index: 1;
     display: flex;
+    z-index: 1;
     align-items: center;
     justify-content: center;
     width: max-content;
     height: 24px;
+    opacity: 0;
     background-color: rgba(16, 24, 39, 0.7);
     color: #fff;
     cursor: pointer;
-    display: none;
+    transition: all 0.3s;
 }
 .gridView .product-cell {
     color: var(--app-content-main-color);
@@ -628,3 +628,4 @@ body {
     font-size: 1.2rem;
     line-height: 24px;
 }
+

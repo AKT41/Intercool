@@ -3,10 +3,7 @@ import React from 'react'
 import Home from '@/pages/home'
 import Navbar from '@/components/nav-footer/navbar'
 import Footer from '@/components/nav-footer/footer'
-import About from '@/components/about'
-import ProductDetails from '@/components/product/product-details'
-import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import BackToTop from '@/components/backtoTop'
 
 export default function App() {
     return (
@@ -14,6 +11,7 @@ export default function App() {
             <Navbar />
             <Home />
             <Footer />
+            <BackToTop />
         </>
     )
 }

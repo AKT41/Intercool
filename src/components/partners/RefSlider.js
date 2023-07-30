@@ -1,9 +1,16 @@
-import React from 'react'
+/* eslint-disable @next/next/no-img-element */
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import '../assets/style/about.css'
-import { Fade } from 'react-reveal'
+import { getSanityReferences } from '../../../sanity/sanity-utils'
 
 function RefSlider() {
+    const [references, setReferences] = useState([])
+
+    useEffect(() => {
+        getSanityReferences().then((data) => setReferences(data))
+    }, [])
+    console.log(references)
     return (
         <>
             <div className='flex justify-center items-center gap-5'>
@@ -12,165 +19,25 @@ function RefSlider() {
                         <div className='col-md-12'>
                             <div className='slider pt-4'>
                                 <div className='slide-track'>
-                                    <div className='slide'>
-                                        <div
-                                            className='col-lg-3 col-md-4 col-6'
-                                            data-aos='fade-up'
-                                            data-aos-duration='1200'
-                                        >
-                                            <div className='img-box bx-a'>
-                                                <a href='#'>
-                                                    <Image
-                                                        src='https://i.hizliresim.com/gygrtyn.jpg'
-                                                        alt='intercool'
-                                                        width={100}
-                                                        height={100}
-                                                        className='rounded-full grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer'
-                                                    />
-                                                </a>
+                                    {references.map((ref) => (
+                                        <div className='slide' key={ref._id}>
+                                            <div
+                                                className='col-lg-3 col-md-4 col-6'
+                                                data-aos='fade-up'
+                                                data-aos-duration='1200'
+                                            >
+                                                <div className='img-box bx-a'>
+                                                    <a href='#'>
+                                                        <img
+                                                            src={ref.referenceImage}
+                                                            alt='intercool'
+                                                            className='rounded-md grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer'
+                                                        />
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className='slide'>
-                                        <div
-                                            className='col-lg-2 col-md-4 col-6'
-                                            data-aos='fade-up'
-                                            data-aos-duration='1200'
-                                            data-aos-delay='50'
-                                        >
-                                            <div className='img-box bx-b'>
-                                                <a href='#'>
-                                                    <Image
-                                                        src='https://ozgungraphic.com/uploads/marka/large/MTY0MWNmZTMwODFkNzU.png'
-                                                        alt='intercool'
-                                                        width={100}
-                                                        height={100}
-                                                        className='rounded-full object-center object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer'
-                                                    />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='slide'>
-                                        <div
-                                            className='col-lg-3 col-md-4 col-6'
-                                            data-aos='fade-up'
-                                            data-aos-duration='1200'
-                                            data-aos-delay='100'
-                                        >
-                                            <div className='img-box bx-c'>
-                                                <a href='#'>
-                                                    <Image
-                                                        src='https://ozgungraphic.com/uploads/marka/large/MTY0MWNmZTMwODFkNzU.png'
-                                                        alt='intercool'
-                                                        width={100}
-                                                        height={100}
-                                                        className='rounded-full object-center object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer'
-                                                    />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='slide'>
-                                        <div
-                                            className='col-xl-2 col-lg-3 col-md-4 col-6'
-                                            data-aos='fade-up'
-                                            data-aos-duration='1200'
-                                            data-aos-delay='150'
-                                        >
-                                            <div className='img-box bx-d'>
-                                                <a href='#'>
-                                                    <Image
-                                                        src='https://ozgungraphic.com/uploads/marka/large/MTY0MWNmZTMwODFkNzU.png'
-                                                        alt='intercool'
-                                                        width={100}
-                                                        height={100}
-                                                        className='rounded-full object-center object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer'
-                                                    />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='slide'>
-                                        <div
-                                            className='col-xl-2 col-lg-3 col-md-4 col-6'
-                                            data-aos='fade-up'
-                                            data-aos-duration='1200'
-                                            data-aos-delay='200'
-                                        >
-                                            <div className='img-box bx-e'>
-                                                <a href='#'>
-                                                    <Image
-                                                        src='https://ozgungraphic.com/uploads/marka/large/MTY0MWNmZTMwODFkNzU.png'
-                                                        alt='intercool'
-                                                        width={100}
-                                                        height={100}
-                                                        className='rounded-full object-center object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer'
-                                                    />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='slide'>
-                                        <div
-                                            className='col-xl-4 col-lg-2 col-md-4 col-6'
-                                            data-aos='fade-up'
-                                            data-aos-duration='1200'
-                                            data-aos-delay='250'
-                                        >
-                                            <div className='img-box bx-f'>
-                                                <a href='#'>
-                                                    <Image
-                                                        src='https://ozgungraphic.com/uploads/marka/large/MTY0MWNmZTMwODFkNzU.png'
-                                                        alt='intercool'
-                                                        width={100}
-                                                        height={100}
-                                                        className='rounded-full object-center object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer'
-                                                    />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='slide'>
-                                        <div
-                                            className='col-xl-2 col-lg-3 col-md-4 col-6'
-                                            data-aos='fade-up'
-                                            data-aos-duration='1200'
-                                            data-aos-delay='300'
-                                        >
-                                            <div className='img-box bx-g'>
-                                                <a href='#'>
-                                                    <Image
-                                                        src='https://i.hizliresim.com/gygrtyn.jpg'
-                                                        alt='intercool'
-                                                        width={100}
-                                                        height={100}
-                                                        className='rounded-full object-center object-contain grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer'
-                                                    />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='slide'>
-                                        <div
-                                            className='col-xl-3 col-lg-3 col-md-4 col-6'
-                                            data-aos='fade-up'
-                                            data-aos-duration='1200'
-                                            data-aos-delay='350'
-                                        >
-                                            <div className='img-box bx-h'>
-                                                <a href='#'>
-                                                    <Image
-                                                        src='https://i.hizliresim.com/gygrtyn.jpg'
-                                                        alt='intercool'
-                                                        width={100}
-                                                        height={100}
-                                                        className='rounded-full grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer'
-                                                    />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

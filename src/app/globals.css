@@ -137,10 +137,27 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #e2e8f0;
+    background-color: rgb(226, 232, 240);
+    scroll-behavior: smooth;
 }
 @media screen and (max-width: 768px) {
     .flicking-camera {
         display: block !important;
     }
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f3661;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #102347;
 }

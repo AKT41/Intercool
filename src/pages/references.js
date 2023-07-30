@@ -4,6 +4,7 @@ import React from 'react'
 import Navbar from '../components/nav-footer/navbar'
 import Footer from '../components/nav-footer/footer'
 import ReferanceHome from '../components/partners'
+import BackToTop from '@/components/backtoTop'
 import '../components/assets/style/navbar.css'
 import { Helmet } from 'react-helmet'
 import './style.css'
@@ -21,7 +22,7 @@ export default function referances() {
                 <meta name='language' content='Turkish' />
                 <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
                 <meta name='revisit-after' content='1 days' />
-                <meta name='google' content='notranslate' /> 
+                <meta name='google' content='notranslate' />
                 <link rel='icon' href='https://i.hizliresim.com/e4o20gp.png' />
                 <title>Referanslarımız | İntercool</title>
                 <script src='https://cdn.tailwindcss.com'></script>
@@ -29,6 +30,7 @@ export default function referances() {
 
             <Navbar />
             <ReferanceHome />
+            <BackToTop />
             <Footer />
         </>
     )
