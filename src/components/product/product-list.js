@@ -7,9 +7,9 @@ import { getSanityProducts } from '../../../sanity/sanity-utils'
 import { useRouter } from 'next/router'
 
 export default function ProductList() {
-    const router = useRouter()
     const [isFilterMenuActive, setFilterMenuActive] = useState(false)
     const [isGridActive, setGridActive] = useState(true)
+    const router = useRouter()
     const [products, setProducts] = useState([])
     const [searchQuery, setSearchQuery] = useState('')
     const [selectedCategory, setSelectedCategory] = useState('All')
@@ -102,7 +102,7 @@ export default function ProductList() {
                                             <option value='klima'>Klima</option>
                                             <option value='endüstriyel'>Endüstriyel</option>
                                             <option value='medikal'>Medikal</option>
-                                            <option value='sıhhitesisat'>Sıhhi Tesisat</option>
+                                            <option value='sihhitesisat'>Sıhhi Tesisat</option>
                                         </select>
                                         {/* stock status */}
                                         <label>Stok Durumu</label>
@@ -246,10 +246,10 @@ export default function ProductList() {
                                         animationName: 'none!important'
                                     }}
                                 >
-                                    <a href={`/products/${product.slug}`} key={product._id}>
+                                    <a href={`/products/${product.slug}`}>
                                         <button className='cell-more-button'>Ürünü İncele</button>
                                     </a>
-                                    <a href={`/products/${product.slug}`} key={product._id}>
+                                    <a href={`/products/${product.slug}`}>
                                         <div className='product-cell image'>
                                             <img
                                                 src={product.smallImage}

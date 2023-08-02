@@ -26,14 +26,6 @@ export default function Product() {
 
     const carouselRef = useRef(null)
 
-    const handlePrevClick = () => {
-        carouselRef.current.prev()
-    }
-
-    const handleNextClick = () => {
-        carouselRef.current.next()
-    }
-
     useEffect(() => {
         async function fetchProduct() {
             if (slug) {
@@ -156,7 +148,7 @@ export default function Product() {
                                                 <a
                                                     href={`https://api.whatsapp.com/send?phone=905539227305&text=Merhaba *${capitalizeFirstLetter(
                                                         product.name
-                                                    )}*, Ürününüz ile ilgili bilgi almak istiyorum. Ürün Linki: https://www.cigdemsogutma.com ${
+                                                    )}*, Ürününüz ile ilgili bilgi almak istiyorum. Ürün Linki: ${
                                                         window.location.href
                                                     }`}
                                                     target='_blank'

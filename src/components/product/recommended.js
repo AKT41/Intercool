@@ -70,7 +70,7 @@ function Recommended() {
                         animationSpeed={1000}
                     >
                         {cards.map((card) => (
-                            <div className='card p-4 m-0' key={card.id}>
+                            <div className='card p-4 m-0' key={card._id}>
                                 <div className='bg-gray-100 p-6 rounded-lg'>
                                     <img
                                         className='h-40 rounded w-full object-cover object-center mb-6'

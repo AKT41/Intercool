@@ -15,15 +15,15 @@ export default function ContactForm() {
                                         <div className='contact-info-icon'>
                                             <svg
                                                 xmlns='http://www.w3.org/2000/svg'
-                                                class='icon icon-tabler icon-tabler-map'
+                                                className='icon icon-tabler icon-tabler-map'
                                                 width='24'
                                                 height='24'
                                                 viewBox='0 0 24 24'
-                                                stroke-width='1.25'
+                                                strokeWidth='1.25'
                                                 stroke='currentColor'
                                                 fill='none'
-                                                stroke-linecap='round'
-                                                stroke-linejoin='round'
+                                                strokelinecap='round'
+                                                strokelinejoin='round'
                                             >
                                                 <path
                                                     stroke='none'
@@ -51,15 +51,15 @@ export default function ContactForm() {
                                         <div className='contact-info-icon'>
                                             <svg
                                                 xmlns='http://www.w3.org/2000/svg'
-                                                class='icon icon-tabler icon-tabler-mail'
+                                                className='icon icon-tabler icon-tabler-mail'
                                                 width='24'
                                                 height='24'
                                                 viewBox='0 0 24 24'
-                                                stroke-width='1.25'
+                                                strokeWidth='1.25'
                                                 stroke='currentColor'
                                                 fill='none'
-                                                stroke-linecap='round'
-                                                stroke-linejoin='round'
+                                                strokelinecap='round'
+                                                strokelinejoin='round'
                                             >
                                                 <path
                                                     stroke='none'
@@ -86,15 +86,15 @@ export default function ContactForm() {
                                         <div className='contact-info-icon'>
                                             <svg
                                                 xmlns='http://www.w3.org/2000/svg'
-                                                class='icon icon-tabler icon-tabler-phone'
+                                                className='icon icon-tabler icon-tabler-phone'
                                                 width='24'
                                                 height='24'
                                                 viewBox='0 0 24 24'
-                                                stroke-width='1.25'
+                                                strokeWidth='1.25'
                                                 stroke='currentColor'
                                                 fill='none'
-                                                stroke-linecap='round'
-                                                stroke-linejoin='round'
+                                                strokelinecap='round'
+                                                strokelinejoin='round'
                                             >
                                                 <path
                                                     stroke='none'
@@ -122,15 +122,15 @@ export default function ContactForm() {
                                         <div className='contact-info-icon'>
                                             <svg
                                                 xmlns='http://www.w3.org/2000/svg'
-                                                class='icon icon-tabler icon-tabler-brand-whatsapp'
+                                                className='icon icon-tabler icon-tabler-brand-whatsapp'
                                                 width='24'
                                                 height='24'
                                                 viewBox='0 0 24 24'
-                                                stroke-width='1.25'
+                                                strokeWidth='1.25'
                                                 stroke='currentColor'
                                                 fill='none'
-                                                stroke-linecap='round'
-                                                stroke-linejoin='round'
+                                                strokelinecap='round'
+                                                strokelinejoin='round'
                                             >
                                                 <path
                                                     stroke='none'
@@ -142,7 +142,7 @@ export default function ContactForm() {
                                             </svg>
                                         </div>
                                         <div className='contact-info-text'>
-                                            <h2>Whatsapp iletişim Hattımız</h2>
+                                            <h2>Whatsapp İletişim</h2>
                                             <span>0 212 548 78 69</span>
                                             <span className='text-opacity-0 select-none phone2'>
                                                 0 212 548 78 69
@@ -162,7 +162,7 @@ export default function ContactForm() {
                                     </h2>
                                 </Fade>
                                 <Fade left cascade>
-                                    <form action='contact-mail.php' method='post'>
+                                    <form action='' method='post'>
                                         <div className='row'>
                                             <div className='col-md-6 col-sm-6 col-xs-12'>
                                                 <div className='single-input-field'>

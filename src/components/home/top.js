@@ -13,15 +13,15 @@ function SampleNextArrow(props) {
         >
             <svg
                 xmlns='http://www.w3.org/2000/svg'
-                class='icon icon-tabler icon-tabler-caret-right text-slate-600'
+                className='icon icon-tabler icon-tabler-caret-right text-slate-600'
                 width='48'
                 height='48'
                 viewBox='0 0 24 24'
-                stroke-width='1'
+                strokeWidth='1'
                 stroke='currentColor'
                 fill='none'
-                stroke-linecap='round'
-                stroke-linejoin='round'
+                strokeLinecap='round'
+                strokeLinejoin='round'
             >
                 <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
                 <path d='M10 18l6 -6l-6 -6v12'></path>
@@ -39,7 +39,7 @@ function SamplePrevArrow(props) {
         >
             <svg
                 xmlns='http://www.w3.org/2000/svg'
-                class='icon icon-tabler icon-tabler-caret-left text-slate-600'
+                className='icon icon-tabler icon-tabler-caret-left text-slate-600'
                 width='48'
                 height='48'
                 viewBox='0 0 24 24'
