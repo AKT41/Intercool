@@ -84,6 +84,40 @@ const productSchema = {
             required: true
         },
         {
+            name: 'productType',
+            title: 'Ürün Çeşidi',
+            type: 'string',
+            options: {
+                list: [
+                    {
+                        title: 'PE Beyaz İzolasyonlu Bakır Boru',
+                        value: 'PE Beyaz İzolasyonlu Bakır Boru'
+                    },
+                    {
+                        title: 'PE Siyah İzolasyonlu Bakır Boru',
+                        value: 'PE Siyah İzolasyonlu Bakır Boru'
+                    },
+                    {
+                        title: 'PE Platina İzolasyonlu Bakır Boru',
+                        value: 'PE Platina İzolasyonlu Bakır Boru'
+                    },
+                    {
+                        title: 'Çiftli İzolasyonlu Beyaz Bakır Boru',
+                        value: 'Çiftli İzolasyonlu Beyaz Bakır Boru'
+                    },
+                    {
+                        title: 'Çiftli İzolasyonlu Siyah Bakır Boru',
+                        value: 'Çiftli İzolasyonlu Siyah Bakır Boru'
+                    },
+                    {
+                        title: 'Çiftli İzolasyonlu Platina Bakır Boru',
+                        value: 'Çiftli İzolasyonlu Platina Bakır Boru'
+                    }
+                ]
+            },
+            required: true
+        },
+        {
             name: 'inStock',
             title: 'Stok Durumu',
             type: 'boolean'

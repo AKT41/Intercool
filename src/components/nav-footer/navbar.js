@@ -1,27 +1,37 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../assets/style/navbar.css'
 import Fade from 'react-reveal/Fade'
+import { getSanityProducts } from '../../../sanity/sanity-utils'
 import Link from 'next/link'
+// import { useRouter } from 'next/router'
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [inputValue, setInputValue] = useState('')
     const [isSearchDelete, setIsSearchDelete] = useState(false)
+    const [products, setProducts] = useState([])
+    const [filteredProducts, setFilteredProducts] = useState([])
+
+    useEffect(() => {
+        async function fetchProducts() {
+            const products = await getSanityProducts()
+            setProducts(products)
+        }
+        fetchProducts()
+    }, [])
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
     }
 
     const handleInputChange = (e) => {
-        if (e.target.value.length > 0) {
-            setIsSearchDelete(true)
-        } else {
-            setIsSearchDelete(false)
-        }
-        setInputValue(e.target.value)
+        const query = e.target.value.toLowerCase()
+        const filtered = products.filter((product) => product.name.toLowerCase().includes(query))
+        setFilteredProducts(filtered)
+        setInputValue(query)
     }
 
     const clearInput = () => {
@@ -33,7 +43,7 @@ export default function Navbar() {
         <>
             <Fade top>
                 <nav
-                    className='bg-white border-gray-200 dark:bg-sky-700 fixed top-0 left-0 right-0 z-50 opac dark:bg-opacity-70'
+                    className='bg-white border-gray-200 dark:bg-sky-700 fixed top-0 left-0 right-0 z-50 dark:bg-opacity-70 '
                     style={{
                         backdropFilter: 'blur(10px)'
                     }}
@@ -133,46 +143,16 @@ export default function Navbar() {
                                         href='/products'
                                         className='py-2 pl-3 pr-4 group peer flex md:justify-center items-center content-center gap-1 text-gray-900 rounded transition-all duration-200 nav-item bg-opacity-70  dark:text-white dark:hover:text-white dark:border-gray-700'
                                     >
-                                        Ürünlerimiz
-                                        {/* <span>   */}
+                                        Kullanım Alanlarımız
                                     </Link>
-                                    {/* <ul
-                                        className='md:absolute w-[98%] relative md:w-64 hidden dark:bg-opacity-70 peer-focus:flex flex-wrap hover:flex left-1 rounded-md bg-white border border-gray-200 dark:bg-gray-600 dark:border-gray-700'
-                                        style={{ backdropFilter: 'blur(10px)' }}
+                                </li>
+                                <li className='relative'>
+                                    <Link
+                                        href='/products'
+                                        className='py-2 pl-3 pr-4 group peer flex md:justify-center items-center content-center gap-1 text-gray-900 rounded transition-all duration-200 nav-item bg-opacity-70  dark:text-white dark:hover:text-white dark:border-gray-700'
                                     >
-                                        <li className='w-1/2'>
-                                            <Link
-                                                href='#'
-                                                className='block px-4 py-2 text-gray-900 rounded-tr-none dark:text-whit rounded-md transition-all duration-150 dark:hover:text-white dark:border-gray-700'
-                                            >
-                                                Kategori 1
-                                            </Link>
-                                        </li>
-                                        <li className='w-1/2'>
-                                            <Link
-                                                href='#'
-                                                className='block px-4 py-2 text-gray-900 dark:text-white rounded-tl-non rounded-md transition-all duration-150 dark:hover:text-white dark:border-gray-700'
-                                            >
-                                                Kategori 2
-                                            </Link>
-                                        </li>
-                                        <li className='w-1/2'>
-                                            <Link
-                                                href='#'
-                                                className='block px-4 py-2 text-gray-900 dark:text-white rounded-br-non rounded-md transition-all duration-150 dark:hover:text-white dark:border-gray-700'
-                                            >
-                                                Kategori 3
-                                            </Link>
-                                        </li>
-                                        <li className='w-1/2'>
-                                            <Link
-                                                href='#'
-                                                className='block px-4 py-2 text-gray-900 dark:text-white rounded-bl-non rounded-md transition-all duration-150 dark:hover:text-white dark:border-gray-700'
-                                            >
-                                                Kategori 4
-                                            </Link>
-                                        </li>
-                                    </ul> */}
+                                        Ürünlerimiz
+                                    </Link>
                                 </li>
                                 <li>
                                     <Link
@@ -188,7 +168,7 @@ export default function Navbar() {
                         <div
                             className={`${
                                 isMenuOpen ? 'block' : 'hidden'
-                            } items-center search-box justify-between w-full md:flex md:w-auto md:order-1 transition duration-500 transform md:translate-y-0 md:opacity-100`}
+                            } items-center relative search-box input-nav justify-between w-full md:flex md:w-auto md:order-1 transition duration-500 transform md:translate-y-0 md:opacity-100`}
                         >
                             <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none z-40'>
                                 <svg
@@ -209,10 +189,11 @@ export default function Navbar() {
                             <input
                                 type='text'
                                 id='search-navbar'
-                                className='block w-full transition-all duration-200 p-2 pl-10 hover:border-sky-950 border-solid focus:bg-gray-200 text-gray-900 border border-gray-300 rounded-lg bg-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-500 outline-none'
+                                className='block w-full transition-all duration-200 p-2  pl-10 border-solid text-gray-900 border rounded-lg bg-gray-300  outline-none'
                                 placeholder='Ürün Ara...'
                                 onChange={handleInputChange}
                                 value={inputValue}
+                                autcomplete='off'
                             />
 
                             <div
@@ -222,14 +203,14 @@ export default function Navbar() {
                                 <svg
                                     xmlns='http://www.w3.org/2000/svg'
                                     className={
-                                        isSearchDelete && inputValue.length > 0
+                                        inputValue.length > 0
                                             ? 'w-5 h-5 text-gray-900 cursor-pointer icon icon-tabler icon-tabler-x opacity-100 transition-all duration-300'
                                             : 'opacity-0 transition-all duration-300'
                                     }
                                     width='24'
                                     height='24'
                                     viewBox='0 0 24 24'
-                                    strokeWidth='1'
+                                    strokeWidth='1.5'
                                     stroke='currentColor'
                                     fill='none'
                                     strokeLinecap='round'
@@ -240,6 +221,57 @@ export default function Navbar() {
                                     <path d='M6 6l12 12'></path>
                                 </svg>
                             </div>
+                            {inputValue.length > 0 ? (
+                                <ul className='search-results absolute bg-gray-200 bg-opacity-60 p-3 overflow-auto top-9 w-full rounded-br-lg rounded-bl-lg flex flex-col gap-2 justify-center text-left'>
+                                    {filteredProducts.length > 0 ? (
+                                        filteredProducts.map((product) => (
+                                            <li
+                                                key={product.id}
+                                                className='bg-gray-400 rounded-md share-btn'
+                                            >
+                                                <a
+                                                    href={`/products/${product.slug}`}
+                                                    className='flex justify-between items-center gap-2 hover:bg-gray-500 rounded-md transition-all duration-200'
+                                                >
+                                                    <img
+                                                        className='w-14 h-14 rounded-md object-cover'
+                                                        src={product.smallImage}
+                                                    />
+
+                                                    <p className='capitalize text-[15px] text-white'>
+                                                        {product.name}
+                                                    </p>
+                                                    <p className='mr-2 go-link'>
+                                                        <svg
+                                                            xmlns='http://www.w3.org/2000/svg'
+                                                            className='icon icon-tabler icon-tabler-share-3 text-white'
+                                                            width='24'
+                                                            height='24'
+                                                            viewBox='0 0 24 24'
+                                                            strokeWidth='1.5'
+                                                            stroke='currentColor'
+                                                            fill='none'
+                                                            strokeLinecap='round'
+                                                            strokeLinejoin='round'
+                                                        >
+                                                            <path
+                                                                stroke='none'
+                                                                d='M0 0h24v24H0z'
+                                                                fill='none'
+                                                            ></path>
+                                                            <path d='M13 4v4c-6.575 1.028 -9.02 6.788 -10 12c-.037 .206 5.384 -5.962 10 -6v4l8 -7l-8 -7z'></path>
+                                                        </svg>
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        ))
+                                    ) : (
+                                        <li className='bg-gray-400 text-red-600 font-semibold tracking-wide rounded-md py-2 text-center'>
+                                            Ürün bulunamadı.
+                                        </li>
+                                    )}
+                                </ul>
+                            ) : null}
                         </div>
                     </div>
                 </nav>

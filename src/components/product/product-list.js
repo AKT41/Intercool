@@ -1,21 +1,21 @@
-/* eslint-disable @next/next/no-img-element */
-'use client'
 import React, { useState, useEffect } from 'react'
 import '../assets/style/product.css'
 import { Fade } from 'react-reveal'
 import { getSanityProducts } from '../../../sanity/sanity-utils'
 import { useRouter } from 'next/router'
 
+const categoryData = [
+    { title: 'Klima', value: 'klima', image: 'https://i.hizliresim.com/1g7lr9o.png' },
+    { title: 'Endüstriyel', value: 'endüstriyel', image: 'https://i.hizliresim.com/7wu2bhj.png' },
+    { title: 'Medikal', value: 'medikal', image: 'https://i.hizliresim.com/cj1godb.jpg' },
+    { title: 'Sıhhi Tesisat', value: 'sihhitesisat', image: 'https://i.hizliresim.com/czgac6m.jpg' }
+]
+
 export default function ProductList() {
-    const [isFilterMenuActive, setFilterMenuActive] = useState(false)
     const [isGridActive, setGridActive] = useState(true)
     const router = useRouter()
     const [products, setProducts] = useState([])
-    const [searchQuery, setSearchQuery] = useState('')
-    const [selectedCategory, setSelectedCategory] = useState('All')
-    const [selectedStockStatus, setSelectedStockStatus] = useState('All')
-    const [selectedPrice, setSelectedPrice] = useState('')
-    const [sortByPrice, setSortByPrice] = useState('None')
+    const uniqueItems = new Map()
 
     useEffect(() => {
         async function fetchProducts() {
@@ -25,263 +25,89 @@ export default function ProductList() {
         fetchProducts()
     }, [])
 
-    function handleFilterClick() {
-        setFilterMenuActive((prev) => !prev)
-    }
-
-    function handleSearch(event) {
-        setSearchQuery(event.target.value)
-    }
-
-    function handleSortByPrice(event) {
-        setSortByPrice(event.target.value)
-    }
-
-    const sortedProducts = products.slice().sort((a, b) => {
-        if (sortByPrice === 'LowToHigh') {
-            return parseFloat(a.price) - parseFloat(b.price)
-        } else if (sortByPrice === 'HighToLow') {
-            return parseFloat(b.price) - parseFloat(a.price)
+    products.forEach((product) => {
+        if (product.category) {
+            if (!uniqueItems.has(product.category)) {
+                uniqueItems.set(product.category, [])
+            }
+            uniqueItems.get(product.category).push(product)
         }
-        return 0
     })
 
     return (
-        <>
-            <div className='app-container mt-20 w-full max-w-7xl min-h-[100vh]'>
-                <div className='app-content'>
-                    <div className='app-content-header'>
-                        <Fade top>
-                            <h1 className='app-content-headerText'>Ürünlerimiz</h1>
-                        </Fade>
-                    </div>
-                    <div className='app-content-actions'>
-                        <Fade left>
-                            <input
-                                className='search-bar border border-solid'
-                                placeholder='Ürün Ara...'
-                                type='text'
-                                value={searchQuery}
-                                onChange={handleSearch}
-                            />
-                        </Fade>
-                        <Fade top>
-                            <div className='app-content-actions-wrapper'>
-                                <div className='filter-button-wrapper'>
-                                    <button
-                                        className='action-button filter jsFilter'
-                                        onClick={handleFilterClick}
-                                    >
-                                        <span>Filtrele</span>
-                                        <svg
-                                            xmlns='http://www.w3.org/2000/svg'
-                                            width='16'
-                                            height='16'
-                                            viewBox='0 0 24 24'
-                                            fill='none'
-                                            stroke='currentColor'
-                                            strokeWidth='2'
-                                            strokeLinecap='round'
-                                            strokeLinejoin='round'
-                                            className='feather feather-filter text-black'
-                                        >
-                                            <polygon points='22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3' />
-                                        </svg>
-                                    </button>
-                                    <div
-                                        className={`filter-menu absolute z-[9999] md: right-0 ${
-                                            isFilterMenuActive ? 'active' : ''
-                                        }`}
-                                    >
-                                        {/* category */}
-                                        <label>Kategori</label>
-                                        <select
-                                            onChange={(e) => setSelectedCategory(e.target.value)}
-                                        >
-                                            <option value='All'>Bütün Kategoriler</option>
-                                            <option value='klima'>Klima</option>
-                                            <option value='endüstriyel'>Endüstriyel</option>
-                                            <option value='medikal'>Medikal</option>
-                                            <option value='sihhitesisat'>Sıhhi Tesisat</option>
-                                        </select>
-                                        {/* stock status */}
-                                        <label>Stok Durumu</label>
-                                        <select
-                                            onChange={(e) => setSelectedStockStatus(e.target.value)}
-                                        >
-                                            <option value='All'>Hepsi</option>
-                                            <option value='true'>Mevcut</option>
-                                            <option value='false'>Stokda Yok</option>
-                                        </select>
-                                        {/* price */}
-                                        <label>Fiyat Aralığı</label>
-                                        <select onChange={handleSortByPrice}>
-                                            <option value='None'>Fiyata Göre Sırala</option>
-                                            <option value='LowToHigh'>Düşükten Yükseğe</option>
-                                            <option value='HighToLow'>Yüksekten Düşüğe</option>
-                                        </select>
-                                        {/* reset */}
-                                        <div className='filter-menu-buttons'>
-                                            <button
-                                                className='filter-button reset'
-                                                onClick={() => {
-                                                    setSelectedCategory('All')
-                                                    setSelectedStockStatus('All')
-                                                    setSelectedPrice('')
-                                                    setSortByPrice('None')
-                                                }}
-                                            >
-                                                Sıfırla
-                                            </button>
-                                            {/* apply */}
-                                            <button
-                                                className='filter-button apply'
-                                                onClick={handleFilterClick}
-                                            >
-                                                Uygula
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Fade>
-                    </div>
+        <div className='app-container mt-20 w-full max-w-7xl mx-auto min-h-[100vh]'>
+            <div className='app-content'>
+                <div className='app-content-header'>
+                    <Fade top>
+                        <h1 className='app-content-headerText my-4'>Kullanım Alanlarımız</h1>
+                    </Fade>
+                </div>
+                <Fade left cascade>
                     <div
                         className={`products-area-wrapper ${
                             isGridActive ? 'gridView' : 'tableView'
                         }`}
                     >
-                        <div className='products-header'>
-                            <div className='product-cell image'>
-                                Ürünler
-                                <button className='sort-button'>
-                                    <svg
-                                        xmlns='http://www.w3.org/2000/svg'
-                                        width='16'
-                                        height='16'
-                                        viewBox='0 0 512 512'
+                        {Array.from(uniqueItems.keys()).map((itemKey, index) => (
+                            <div key={index} className='blog-card'>
+                                <div className='meta'>
+                                    <a
+                                        className='btn btn-primary'
+                                        href={`/products/${
+                                            itemKey === 'productType'
+                                                ? 'product-types'
+                                                : 'product-categoris'
+                                        }/${itemKey}`}
                                     >
-                                        <path
-                                            fill='currentColor'
-                                            d='M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z'
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div className='product-cell category'>
-                                Kategori
-                                <button className='sort-button'>
-                                    <svg
-                                        xmlns='http://www.w3.org/2000/svg'
-                                        width='16'
-                                        height='16'
-                                        viewBox='0 0 512 512'
-                                    >
-                                        <path
-                                            fill='currentColor'
-                                            d='M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z'
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div className='product-cell status-cell'>
-                                Stok
-                                <button className='sort-button'>
-                                    <svg
-                                        xmlns='http://www.w3.org/2000/svg'
-                                        width='16'
-                                        height='16'
-                                        viewBox='0 0 512 512'
-                                    >
-                                        <path
-                                            fill='currentColor'
-                                            d='M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z'
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div className='product-cell price'>
-                                Fiyat
-                                <button className='sort-button'>
-                                    <svg
-                                        xmlns='http://www.w3.org/2000/svg'
-                                        width='16'
-                                        height='16'
-                                        viewBox='0 0 512 512'
-                                    >
-                                        <path
-                                            fill='currentColor'
-                                            d='M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z'
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        {sortedProducts
-                            .filter((product) => {
-                                const nameIncludesQuery = product.name
-                                    .toLowerCase()
-                                    .includes(searchQuery.toLowerCase())
-                                const categoryMatches =
-                                    selectedCategory === 'All' ||
-                                    product.category === selectedCategory
-                                const stockStatusMatches =
-                                    selectedStockStatus === 'All' ||
-                                    product.inStock === (selectedStockStatus === 'true')
-                                const priceMatches =
-                                    selectedPrice === '' ||
-                                    product.price === parseFloat(selectedPrice)
-                                return (
-                                    nameIncludesQuery &&
-                                    categoryMatches &&
-                                    stockStatusMatches &&
-                                    priceMatches
-                                )
-                            })
-                            .map((product) => (
-                                <div
-                                    key={product._id}
-                                    className='products-row'
-                                    style={{
-                                        animationName: 'none!important'
-                                    }}
-                                >
-                                    <a href={`/products/${product.slug}`}>
-                                        <button className='cell-more-button'>Ürünü İncele</button>
-                                    </a>
-                                    <a href={`/products/${product.slug}`}>
-                                        <div className='product-cell image'>
-                                            <img
-                                                src={product.smallImage}
-                                                alt={product.name}
-                                                className='transition-all duration-500 ease-in-out select-none'
-                                            />
-                                            <span>{product.name}</span>
-                                            <div className='product-cell category'>
-                                                <span className='cell-label'>Kategori:</span>
-                                                {product.category}
-                                            </div>
-                                            <div className='product-cell status-cell'>
-                                                <span className='cell-label'>Stok:</span>
-                                                <span
-                                                    className={`status ${
-                                                        product.inStock ? 'active' : 'disabled'
-                                                    }`}
-                                                >
-                                                    {product.inStock ? 'Mevcut' : 'Stokda Yok'}
-                                                </span>
-                                            </div>
-                                            <div className='product-cell price'>
-                                                <span className='cell-label'>Fiyat:</span>
-                                                {product.price}₺
-                                            </div>
-                                        </div>
+                                        <div
+                                            className='photo'
+                                            style={{
+                                                backgroundImage:
+                                                    'url(' +
+                                                    categoryData.find(
+                                                        (category) => category.value === itemKey
+                                                    )?.image +
+                                                    ')'
+                                            }}
+                                        ></div>
                                     </a>
                                 </div>
-                            ))}
+                                <div className='description'>
+                                    <h1>
+                                        {
+                                            categoryData.find(
+                                                (category) => category.value === itemKey
+                                            )?.title
+                                        }
+                                    </h1>
+                                    <h2>&nbsp;</h2>
+                                    <p>
+                                        {' '}
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                                        eum dolorum architecto obcaecati enim dicta praesentium,
+                                        quam nobis! Neque ad aliquam facilis numquam. Veritatis,
+                                        sit.
+                                    </p>
+                                    <p className='read-more'>
+                                        <a href='#' className='link-with-underline'>
+                                            <a
+                                                className='btn btn-primary'
+                                                href={`/products/${
+                                                    itemKey === 'productType'
+                                                        ? 'product-types'
+                                                        : 'product-categoris'
+                                                }/${itemKey}`}
+                                            >
+                                                Ürünleri Gör
+                                            </a>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                </div>
+                </Fade>
             </div>
-        </>
+        </div>
     )
 }

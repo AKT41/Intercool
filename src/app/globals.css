@@ -161,3 +161,8 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #102347;
 }
+
+::selection {
+    background-color: #2b5cb6;
+    color: #fff;
+}

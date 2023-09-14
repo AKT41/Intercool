@@ -200,3 +200,9 @@
     text-decoration: none;
     margin-right: 12px;
 }
+
+@media screen and (max-width: 768px) {
+    .loading-text {
+        letter-spacing:5px;
+    }
+}

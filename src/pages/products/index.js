@@ -6,16 +6,13 @@ import Navbar from '../../components/nav-footer/navbar'
 import Footer from '../../components/nav-footer/footer'
 import ProductList from '@/components/product/product-list'
 import '../../components/assets/style/navbar.css'
+import '../../app/globals.css'
 import BackToTop from '@/components/backtoTop'
 import Loader from '@/components/loader'
 import { Helmet } from 'react-helmet'
 import '../style.css'
 
 export default function about() {
-    const [isLoading, setIsLoading] = useState(true)
-    useEffect(() => {
-        setTimeout(() => setIsLoading(false), 2000)
-    }, [])
     return (
         <>
             <Helmet>
@@ -35,14 +32,8 @@ export default function about() {
             </Helmet>
 
             <Navbar />
-            {isLoading ? (
-                <Loader />
-            ) : (
-                <>
-                    <ProductList />
-                    <BackToTop />
-                </>
-            )}
+            <ProductList />
+            <BackToTop />
             <Footer />
         </>
     )

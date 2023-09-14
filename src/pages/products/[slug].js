@@ -16,6 +16,7 @@ import Carousel, { slidesToShowPlugin, arrowsPlugin } from '@brainhubeu/react-ca
 import '@brainhubeu/react-carousel/lib/style.css'
 import '@brainhubeu/react-carousel/lib/style.css'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import '../../app/globals.css'
 
 export default function Product() {
     const [product, setProduct] = useState({})
@@ -140,18 +141,25 @@ export default function Product() {
                             <div className='flex flex-row items-center content-center mt-5 justify-between gap-5 scroll-smooth'>
                                 <div className='flex gap-3 items-center'>
                                     <Fade left>
-                                        <span className='text-lg'>{product.price}₺</span>
+                                        {product.price === 0 || !product.price ? (
+                                            <span className='text-lg'>
+                                                Fiyat İçin Teklif Alınız
+                                            </span>
+                                        ) : (
+                                            <span className='text-lg'>{product.price}₺</span>
+                                        )}
                                     </Fade>
                                     <Fade right>
                                         <button className='flex justify-center items-center content-center gap-2 text-white bg-green-700 border-0 py-2 px-3 focus:outline-none hover:bg-green-800 rounded ml-3 transition-all duration-300'>
                                             <span className='text-lg'>
                                                 <a
-                                                    href={`https://api.whatsapp.com/send?phone=905539227305&text=Merhaba *${capitalizeFirstLetter(
+                                                    href={`https://api.whatsapp.com/send?phone=905522577940&text=Merhaba *${capitalizeFirstLetter(
                                                         product.name
                                                     )}*, Ürününüz ile ilgili bilgi almak istiyorum. Ürün Linki: ${
                                                         window.location.href
                                                     }`}
                                                     target='_blank'
+                                                    className='text-xs md:text-base'
                                                 >
                                                     WhatsApp ile Sipariş Ver
                                                 </a>
@@ -273,26 +281,29 @@ export default function Product() {
                                     <a
                                         href={`/products/${recommendedProduct.slug}`}
                                         key={recommendedProduct._id}
+                                        className='md:h-80 w-[350px] transition-all duration-300 hover:translate-y-2 hover:scale-105'
                                     >
-                                        <div className='card p-4 m-0'>
-                                            <div className='bg-gray-100 p-6 rounded-lg'>
+                                        <div className='card px-4 h-full m-0'>
+                                            <div className='bg-gray-100 h-full rounded-lg transition-all duration-300 shadow-sm shadow-gray-300 hover:shadow-ld'>
                                                 <img
-                                                    className='h-40 rounded w-full object-cover object-center mb-6'
+                                                    className='h-40 rounded w-full object-cover object-center'
                                                     src={recommendedProduct.smallImage}
                                                     alt={recommendedProduct.name}
                                                 />
-                                                <h3
-                                                    className='tracking-widest text-green-500 text-xs font-medium title-font cursor-pointer'
-                                                    title={recommendedProduct.category}
-                                                >
-                                                    {recommendedProduct.category}
-                                                </h3>
-                                                <h2 className='text-lg text-gray-900 font-medium title-font mb-4 line-clamp-1'>
-                                                    {recommendedProduct.name}
-                                                </h2>
-                                                <p className='leading-relaxed text-base line-clamp-3'>
-                                                    {recommendedProduct.description}
-                                                </p>
+                                                <div className='pt-3 pl-3'>
+                                                    <h3
+                                                        className='tracking-widest text-green-500 text-xs font-medium title-font cursor-pointer'
+                                                        title={recommendedProduct.category}
+                                                    >
+                                                        {recommendedProduct.category}
+                                                    </h3>
+                                                    <h2 className='text-lg text-gray-900 font-medium title-font mb-4 line-clamp-1'>
+                                                        {recommendedProduct.name}
+                                                    </h2>
+                                                    <p className='leading-relaxed text-base mb-2 line-clamp-3'>
+                                                        {recommendedProduct.description}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </a>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Top from '@/components/home/top'
 import CategoryCard from '@/components/home/categoryCard'
 import BackToTop from '@/components/backtoTop'
+import '../app/globals.css'
 import Loader from '@/components/loader'
 
 export default function Home() {

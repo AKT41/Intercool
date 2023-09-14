@@ -13,12 +13,21 @@
 .products {
     padding: 0 1rem;
 }
+.go-link {
+    transition: 0.3s ease-in-out;
+}
+.share-btn:hover .go-link {
+    transform: translate(5px, -2px);
+}
+.input-nav {
+    min-width: 275px;
+}
 
 @media screen and (max-width: 768px) {
     .nav-item {
         padding: 0.5rem 0.5rem;
         margin: 0.5rem 0.25rem;
-        background-color: rgba(255, 255, 255, 0.094);
+        /* background-color: rgba(255, 255, 255, 0.094); */
     }
 
     .search-box {

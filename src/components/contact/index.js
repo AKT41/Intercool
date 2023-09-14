@@ -106,7 +106,7 @@ export default function ContactForm() {
                                         </div>
                                         <div className='contact-info-text'>
                                             <h2>Telefon Numaramız</h2>
-                                            <span>0 212 548 78 69</span>
+                                            <span>0 552 257 79 40</span>
                                             <span className='text-opacity-0 select-none phone2'>
                                                 0 212 548 78 69
                                             </span>
@@ -143,7 +143,7 @@ export default function ContactForm() {
                                         </div>
                                         <div className='contact-info-text'>
                                             <h2>Whatsapp İletişim</h2>
-                                            <span>0 212 548 78 69</span>
+                                            <span>0 552 257 79 40</span>
                                             <span className='text-opacity-0 select-none phone2'>
                                                 0 212 548 78 69
                                             </span>
@@ -238,7 +238,7 @@ export default function ContactForm() {
                                         height='450'
                                         frameborder='0'
                                         // style='border:0'
-                                        allowfullscreen
+                                        allowFullScreen
                                     ></iframe>
                                 </div>
                             </div>

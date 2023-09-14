@@ -1,16 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
 import '../assets/style/about.css'
-import { getSanityReferences } from '../../../sanity/sanity-utils'
+import { getSanityReferences, getSanitySlider } from '../../../sanity/sanity-utils'
 
 function RefSlider() {
     const [references, setReferences] = useState([])
-
     useEffect(() => {
         getSanityReferences().then((data) => setReferences(data))
     }, [])
-    console.log(references)
     return (
         <>
             <div className='flex justify-center items-center gap-5'>

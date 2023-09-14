@@ -6,6 +6,7 @@ import Footer from '../components/nav-footer/footer'
 import ReferanceHome from '../components/partners'
 import BackToTop from '@/components/backtoTop'
 import '../components/assets/style/navbar.css'
+import '../app/globals.css'
 import { Helmet } from 'react-helmet'
 import './style.css'
 

@@ -13,6 +13,7 @@ export async function getSanityProducts() {
       _createdAt,
       name,
       category,
+      productType,
       "slug": slug.current,
       "productImages": productImages[]{
         asset->{
@@ -40,6 +41,7 @@ export async function getSanityProduct(slug) {
             _createdAt,
             name,
             category,
+            productType,
             "slug": slug.current,
             "productImages": productImages[]{
                 asset->{
@@ -68,6 +70,16 @@ export async function getSanityReferences() {
       referenceName,
       "referenceImage": referenceImage.asset->url,
       referenceLink
+    }`
+    )
+}
+export async function getSanitySlider() {
+    return client.fetch(
+        groq`*[_type == "homeSlider"]{
+      _id,
+      _createdAt,
+      SliderName,
+     "SliderImage": SliderImage.asset->url
     }`
     )
 }
