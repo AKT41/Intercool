@@ -140,7 +140,7 @@ export default function Navbar() {
                                 </li>
                                 <li className='relative'>
                                     <Link
-                                        href='/products'
+                                        href='/kullanimAlanlari'
                                         className='py-2 pl-3 pr-4 group peer flex md:justify-center items-center content-center gap-1 text-gray-900 rounded transition-all duration-200 nav-item bg-opacity-70  dark:text-white dark:hover:text-white dark:border-gray-700'
                                     >
                                         Kullanım Alanlarımız
@@ -165,7 +165,7 @@ export default function Navbar() {
                             </ul>
                         </div>
 
-                        <div
+                        {/* <div
                             className={`${
                                 isMenuOpen ? 'block' : 'hidden'
                             } items-center relative search-box input-nav justify-between w-full md:flex md:w-auto md:order-1 transition duration-500 transform md:translate-y-0 md:opacity-100`}
@@ -272,7 +272,7 @@ export default function Navbar() {
                                     )}
                                 </ul>
                             ) : null}
-                        </div>
+                        </div> */}
                     </div>
                 </nav>
             </Fade>
