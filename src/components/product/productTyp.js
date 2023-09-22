@@ -37,29 +37,20 @@ export default function ProductType() {
                     </Fade>
                 </div>
                 <Fade left cascade>
-                    <div
-                        className={`products-area-wrapper ${
-                            isGridActive ? 'gridView' : 'tableView'
-                        }`}
-                    >
+                    <div className='products-area-wrapper flex justify-center items-center gap-6 gridView'>
                         {Array.from(uniqueItems).map(([productType, products]) => (
                             <div
                                 key={productType}
                                 className='products-row !p-0 relative shadow hover:shadow-gray-500 !h-80 !bg-cover'
                                 style={{
                                     background: `url(${
-                                        productType === 'PE Beyaz İzolasyonlu Bakır Boru'
-                                            ? 'https://i.hizliresim.com/sv7ax5s.jpg'
-                                            : productType === 'PE Siyah İzolasyonlu Bakır Boru'
-                                            ? 'https://i.hizliresim.com/sv7ax5s.jpg'
-                                            : productType === 'PE Platina İzolasyonlu Bakır Boru'
+                                        productType === 'Çiftli İzolasyonlu Bakır Boru'
+                                            ? 'https://i.hizliresim.com/pho4058.png'
+                                            : productType ===
+                                              'PE Siyah Kauçuk İzolasyonlu Bakır Boru'
                                             ? 'https://i.hizliresim.com/czg12tz.jpg'
-                                            : productType === 'Çiftli İzolasyonlu Beyaz Bakır Boru'
-                                            ? 'https://i.hizliresim.com/sv7ax5s.jpg'
-                                            : productType === 'Çiftli İzolasyonlu Siyah Bakır Boru'
-                                            ? 'https://i.hizliresim.com/czg12tz.jpg'
-                                            : productType === 'Çiftli İzolasyonlu Platina Bakır Boru'
-                                            ? 'https://i.hizliresim.com/czg12tz.jpg'
+                                            : productType === 'Bakır Boy Boru'
+                                            ? 'https://i.hizliresim.com/sv7ax5s.jpg' //kauçuk
                                             : ''
                                     })`,
                                     backgroundRepeat: 'no-repeat',
@@ -71,7 +62,7 @@ export default function ProductType() {
                                 </a>
                                 <a href={`/products/product-types/${productType}`}>
                                     <div className='product-cell image'>
-                                        <p className='capitalize absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white w-full text-center bg-gray-400 bg-opacity-30 backdrop-blur-sm	p-2'>
+                                        <p className='capitalize absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-900 w-full font-medium text-center text-base line-clamp-1 bg-gray-400 bg-opacity-30 backdrop-blur-sm p-2 pb-1'>
                                             <span>{productType}</span>
                                         </p>
                                     </div>

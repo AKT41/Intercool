@@ -18,14 +18,11 @@ export default function categoryCard() {
                                     <div className='content'>
                                         <h2 className='java'>Medikal</h2>
                                         <p className='java line-clamp-3'>
-                                            Medikal Bakır Borular, dayanıklı ve uzun ömürlüdür.
-                                            Yüksek kaliteli bakır malzemesi, korozyona karşı
-                                            dirençli olup, uzun süreli kullanım için idealdir.
-                                            Ayrıca, düşük içerikli diğer elementlerin varlığı da
-                                            boruların mükemmel mekanik özelliklere sa olmasını
-                                            sağlar.
+                                            Medikal, İntercool Medikal alanda bir çok kesime hitap
+                                            eden ürünleri ile bir çok müşterinin gönlünü kazanmış
+                                            bütçe dostu bir firmadır.
                                         </p>
-                                        <p className=' text-sm font-semibold hover:text-slate-800 bg-slate-500 p-2 w-max rounded-md'>
+                                        <p className=' text-xs font-medium bg-slate-500 p-2 w-max rounded-md'>
                                             <Link
                                                 href='/products/product-categoris/medikal'
                                                 className=' w-max'
@@ -47,10 +44,11 @@ export default function categoryCard() {
                                         <span className='stars'></span>
                                         <h2 className='python'>Endüstriyel</h2>
                                         <p className='python'>
-                                            Python is an interpreted, high-level and general-purpose
-                                            programming language.
+                                            Endüstriyel, İntercool PE İzolasyonlu Bakır Boru üretimi
+                                            ve ihracatı yapmaktadır endüstriyel alanda yaptığı
+                                            ürünler ile birlikte sizlere hizmet vermektedir.
                                         </p>
-                                        <p className=' text-sm font-semibold hover:text-slate-800 bg-slate-500 p-2 w-max rounded-md'>
+                                        <p className=' text-xs font-medium  bg-slate-500 p-2 w-max rounded-md'>
                                             <Link
                                                 href='/products/product-categoris/endüstriyel'
                                                 className='text-white w-max'
@@ -71,14 +69,11 @@ export default function categoryCard() {
                                     <div className='content'>
                                         <h2 className='java'>Sıhhi Tesisat </h2>
                                         <p className='java line-clamp-3'>
-                                            Sıhhi Tesisat Bakır Borular, dayanıklı ve uzun
-                                            ömürlüdür. Yüksek kaliteli bakır malzemesi, korozyona
-                                            karşı dirençli olup, uzun süreli kullanım için idealdir.
-                                            Ayrıca, düşük içerikli diğer elementlerin varlığı da
-                                            boruların mükemmel mekanik özelliklere sa olmasını
-                                            sağlar.
+                                            Sıhhi Tesisat, Pe İzolasyonlu Bakır Boruları Sıhhi
+                                            Tesisat alanında sıkça kullanılmaktadır. Sıhhi Tesisat
+                                            sektöründe İntercool markası adını duyurmuştur.
                                         </p>
-                                        <p className=' text-sm font-semibold hover:text-slate-800 bg-slate-500 p-2 w-max rounded-md'>
+                                        <p className=' text-xs font-medium  bg-slate-500 p-2 w-max rounded-md'>
                                             <Link
                                                 href='/products/product-categoris/sihhitesisat'
                                                 className='text-white w-max'
@@ -100,10 +95,11 @@ export default function categoryCard() {
                                         <span className='stars'></span>
                                         <h2 className='python'>Klima</h2>
                                         <p className='python'>
-                                            Python is an interpreted, high-level and general-purpose
-                                            programming language.
+                                            Klima, İntercool markası olarak klima sektöründe oldukça
+                                            tanınan, sektörün lider markalarından birisidir.
+                                            İntercool Bakır Boru Sektörünün lider markası.
                                         </p>
-                                        <p className=' text-sm font-semibold hover:text-slate-800 bg-slate-500 p-2 w-max rounded-md'>
+                                        <p className=' text-xs font-medium  bg-slate-500 p-2 w-max rounded-md'>
                                             <Link
                                                 href='/products/product-categoris/klima'
                                                 className='text-white w-max'

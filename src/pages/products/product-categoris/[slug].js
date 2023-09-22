@@ -310,23 +310,14 @@ export default function ProductDetails() {
                                                                 style={{
                                                                     background: `url(${
                                                                         product.productType ===
-                                                                        'PE Beyaz İzolasyonlu Bakır Boru'
-                                                                            ? 'https://i.hizliresim.com/sv7ax5s.jpg'
+                                                                        'Çiftli İzolasyonlu Bakır Boru'
+                                                                            ? 'https://i.hizliresim.com/pho4058.png'
                                                                             : product.productType ===
-                                                                              'PE Siyah İzolasyonlu Bakır Boru'
-                                                                            ? 'https://i.hizliresim.com/sv7ax5s.jpg'
-                                                                            : product.productType ===
-                                                                              'PE Platina İzolasyonlu Bakır Boru'
+                                                                              'PE Siyah Kauçuk İzolasyonlu Bakır Boru'
                                                                             ? 'https://i.hizliresim.com/czg12tz.jpg'
                                                                             : product.productType ===
-                                                                              'Çiftli İzolasyonlu Beyaz Bakır Boru'
-                                                                            ? 'https://i.hizliresim.com/sv7ax5s.jpg'
-                                                                            : product.productType ===
-                                                                              'Çiftli İzolasyonlu Siyah Bakır Boru'
-                                                                            ? 'https://i.hizliresim.com/czg12tz.jpg'
-                                                                            : product.productType ===
-                                                                              'Çiftli İzolasyonlu Platina Bakır Boru'
-                                                                            ? 'https://i.hizliresim.com/czg12tz.jpg'
+                                                                              'Bakır Boy Boru'
+                                                                            ? 'https://i.hizliresim.com/sv7ax5s.jpg' //kauçuk
                                                                             : ''
                                                                     })`,
                                                                     backgroundRepeat: 'no-repeat',
