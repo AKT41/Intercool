@@ -1,0 +1,83 @@
+{
+    "liveshare.launcherClient": "visualStudioCode",
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+    "workbench.sideBar.location": "left",
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "python.defaultInterpreterPath": "python",
+    "github.copilot.inlineSuggest.enable": true,
+    "prettier.withNodeModules": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false,
+        "yaml": false,
+        "jsonc": true
+    },
+    "python.analysis.typeCheckingMode": "basic",
+    "python.formatting.blackArgs": ["--skip-string-normalization", "--line-length", "100"],
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "none",
+    "prettier.endOfLine": "auto",
+    "prettier.vueIndentScriptAndStyle": true,
+    "prettier.resolveGlobalModules": true,
+    "prettier.proseWrap": "preserve",
+    "prettier.printWidth": 100,
+    "volar.inlayHints.eventArgumentInInlineHandlers": false,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.unicodeHighlight.allowedLocales": {
+        "tr": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.bracketSameLine": false,
+    "prettier.semi": false,
+    "prettier.tabWidth": 4,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "volar.autoCompleteRefs": true,
+    "volar.format.initialIndent": {
+        "script": 0,
+        "style": 0,
+        "template": 0
+    },
+    "volar.format.defaultFormatter": {
+        "script": "prettier",
+        "style": "prettier",
+        "template": "prettier"
+    },
+    "volar.vueserver.additionalExtensions": ["Prettier"],
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "workbench.editorAssociations": {
+        "*.sqlite": "sqlite3-editor.editor"
+    },
+    "workbench.colorTheme": "Default Dark+"
+    // "python.analysis.inlayHints.variableTypes": true,
+    // "python.analysis.inlayHints.functionReturnTypes": true,
+}

@@ -1,0 +1,35 @@
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  
+  .card-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .card {
+    width: 300px;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .card.active {
+    opacity: 1;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  button {
+    margin: 0 10px;
+  }

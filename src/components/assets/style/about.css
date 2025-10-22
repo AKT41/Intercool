@@ -1,0 +1,171 @@
+.bg-about {
+    /* background: url("https://i.hizliresim.com/gygrtyn.jpg"); */
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(5px);
+    margin-top: 2rem;
+}
+
+.about-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.about-title:hover,
+.we-partners:hover {
+    letter-spacing: 5px;
+}
+
+.about-title::after {
+    content: 'Hakkımızda';
+    display: block;
+    margin: -3.7rem auto 0;
+    opacity: 0.4;
+    letter-spacing: 8px;
+    font-size: 4rem;
+    position: relative;
+    z-index: -1;
+    color: #424242c9;
+    text-shadow: 0 5px 5px #424242c9;
+    transition: all 0.3s ease-in-out;
+}
+
+.we-partners::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 5rem;
+    height: 2px;
+    background: #576880c9;
+    margin-top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.we-partners {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .bg-about {
+        margin: 1rem 1rem 1rem 1.1rem;
+    }
+
+    .about-title {
+        font-size: 2.7rem;
+        letter-spacing: 1px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 4rem;
+    }
+
+    .about-title::after {
+        content: 'Hakkımızda';
+        display: block;
+        margin: -3rem auto 0;
+        opacity: 0.1;
+        letter-spacing: 8px;
+        font-size: 3rem;
+        position: relative;
+        z-index: -1;
+        color: #424242c9;
+        text-shadow: 0 5px 5px #424242c9;
+    }
+}
+
+/* ref card slider */
+@-webkit-keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.slider {
+    /* background: white; */
+    height: 250px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 1200px;
+}
+
+.slider::before,
+.slider::after {
+    content: '';
+    height: 250px;
+    position: absolute;
+    width: 200px;
+    /* z-index: 2; */
+    z-index: -1;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider .slide-track {
+    -webkit-animation: scroll 50s linear infinite;
+    animation: scroll 50s linear infinite;
+    display: flex;
+    width: calc(250px * 12);
+}
+
+.slider .slide {
+    height: 100%;
+    width: 250px;
+}
+
+.img-box a {
+    display: block;
+    height: 100%;
+    /* margin: 2rem; */
+    width: 200px;
+    height: 200px;
+}
+
+.img-box img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 0;
+    width: 100%;
+    height: 75%;
+    margin-right: -1rem;
+}
+
+.slider .slide-track:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}

@@ -1,0 +1,214 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 35px;
+    margin: 0 auto;
+    padding: 40px 0;
+    scroll-behavior: smooth;
+}
+.container .card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    background: linear-gradient(to top, #09203f 0%, #537895 100%);
+    border-radius: 15px;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+}
+.container .card .face {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card .face.face1 {
+    box-sizing: border-box;
+    padding: 20px;
+    background-image: linear-gradient(#424242bd, #424242bd),
+        url('https://i.hizliresim.com/czgac6m.jpg') !important;
+    background-size: cover;
+    backdrop-filter: opacity(0.5);
+    border-radius: 20px;
+}
+.container .card .face.face1 h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+.container .card .face.face1 {
+    color: #f4f4f4;
+}
+/* .container .card .face.face1 .python {
+    background-color: #00fffc;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.container .card .face.face1 .cSharp {
+    background-color: #fc00ff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
+.container .card .face.face2 {
+    transition: 0.5s;
+}
+.container .card .face.face2 h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 4em;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.container .card:nth-child(2) .face.face2 h2 {
+    font-size: 3.3em;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.container .card:nth-child(3) .face.face2 h2 {
+    font-size: 3em;
+    text-align: center;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.container .card:nth-child(4) .face.face2 h2 {
+    font-size: 3em;
+    text-align: center;
+    transition: 0.5s;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+.face2 h2 {
+    color: #fff;
+}
+.container .card:hover .face.face2 {
+    height: 60px;
+}
+.container .card:hover .face.face2 h2 {
+    color: #fff;
+    background-color: #42424246;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    font-size: 2em;
+}
+.container .card .sıhhitesisat-ön {
+    background-image: linear-gradient(#42424246, #42424246),
+        url('https://i.hizliresim.com/czgac6m.jpg') !important;
+    backdrop-filter: blur(5px) !important;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+.container .card .sıhhitesisat-iç {
+    box-sizing: border-box;
+    padding: 20px;
+    background-image: linear-gradient(#424242bd, #424242bd),
+        url('https://i.hizliresim.com/czgac6m.jpg') !important;
+    background-size: cover;
+    backdrop-filter: opacity(0.5);
+    border-radius: 20px;
+}
+
+.container .card .medikal-ön {
+    background-image: linear-gradient(#42424246, #42424246),
+        url('https://i.hizliresim.com/cj1godb.jpg') !important;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+.container .card .face.medikal-iç {
+    box-sizing: border-box;
+    padding: 20px;
+    background-image: linear-gradient(#424242bd, #424242bd),
+        url('https://i.hizliresim.com/cj1godb.jpg') !important;
+    background-size: cover;
+    backdrop-filter: opacity(0.5);
+    border-radius: 20px;
+}
+.container .card .endüstriyel-ön {
+    background-image: linear-gradient(#42424246, #42424246),
+        url('https://i.hizliresim.com/7wu2bhj.png') !important;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+.container .card .face.endüstriyel-iç {
+    box-sizing: border-box;
+    padding: 20px;
+    background-image: linear-gradient(#424242bd, #424242bd),
+        url('https://i.hizliresim.com/7wu2bhj.png') !important;
+    background-size: cover;
+    backdrop-filter: opacity(0.5);
+    border-radius: 20px;
+}
+.container .card .klima-ön {
+    background-image: linear-gradient(#42424246, #42424246),
+        url('https://i.hizliresim.com/1g7lr9o.png') !important;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+.container .card .face.klima-iç {
+    box-sizing: border-box;
+    padding: 20px;
+    background-image: linear-gradient(#424242bd, #424242bd),
+        url('https://i.hizliresim.com/1g7lr9o.png') !important;
+    background-size: cover;
+    backdrop-filter: opacity(0.5);
+    border-radius: 20px;
+}
+
+
+.we-use-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.we-use-title:hover {
+    letter-spacing: 5px;
+}
+
+.we-use-title::after {
+    content: 'Kullanım Alanlarımız';
+    display: block;
+    margin: -1.7rem auto 0;
+    opacity: 0.4;
+    letter-spacing: 2px;
+    font-size: 4rem;
+    position: relative;
+    z-index: -1;
+    color: #4242423f;
+    text-shadow: 0 5px 5px #4242423f;
+    transition: all 0.3s ease-in-out;
+}

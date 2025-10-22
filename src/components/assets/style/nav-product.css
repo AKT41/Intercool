@@ -1,0 +1,41 @@
+.nav-items:not(:first-child)::before {
+    content: '/';
+    padding: 0 8px;
+    color: #5e5e5e63;
+    font-size: 20px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    left: -5px;
+}
+
+.slider {
+    width: 33.333% !important;
+    height: auto !important;
+}
+
+.previousButton:hover,
+.nextButton:hover {
+    background-color: #5e5e5e63;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.previousButton svg polygon,
+.nextButton svg polygon {
+    fill: rgb(216, 216, 216);
+}
+
+.disabled {
+    display: none !important;
+    opacity: 0 !important;
+}
+.disabled {
+    display: none !important;
+}
